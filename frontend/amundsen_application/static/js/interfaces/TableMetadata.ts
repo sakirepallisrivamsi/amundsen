@@ -148,11 +148,10 @@ export interface ColumnLineageMap {
   };
 }
 
-export interface TableLineageParams {
-  key: string;
-}
-
-export interface ColumnLineageParams {
-  key: string;
-  column: string;
+export interface TableQualityChecks {
+  external_url: string;
+  last_run_timestamp: number;
+  num_checks_success: number;
+  num_checks_failed: number;
+  num_checks_total: number;
 }

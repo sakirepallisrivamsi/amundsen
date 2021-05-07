@@ -27,6 +27,7 @@ export interface AppConfig {
   tableLineage: TableLineageConfig;
   columnLineage: ColumnLineageConfig;
   tableProfile: TableProfileConfig;
+  tableQualityCheck: TableQualityCheck;
 }
 
 export interface AppConfigCustom {
@@ -50,6 +51,7 @@ export interface AppConfigCustom {
   tableLineage?: TableLineageConfig;
   columnLineage?: ColumnLineageConfig;
   tableProfile?: TableProfileConfig;
+  tableQualityCheck?: TableQualityCheck;
 }
 
 /**
@@ -373,4 +375,12 @@ export interface NumberStyleConfig {
 export interface NumberFormatConfig {
   numberSystem: string | null;
   [NumberStyle.DECIMAL]?: NumberStyleConfig;
+}
+
+/**
+ * TableQualityCheck - configuration to query and display data quality check status from
+ * an external provider. API must be configured.
+ */
+export interface TableQualityCheck {
+  isEnabled: boolean;
 }

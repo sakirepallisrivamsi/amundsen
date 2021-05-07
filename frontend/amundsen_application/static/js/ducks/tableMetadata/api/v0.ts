@@ -219,3 +219,14 @@ export function getColumnLineage(key: string, columnName: string) {
       return Promise.reject({ status });
     });
 }
+
+export function getTableQualityChecks(key: string) {
+  // TODO - TEST CODE
+  return Promise.resolve({
+    external_url: 'https://google.com',
+    last_run_timestamp: Date.now() - 100000,
+    num_checks_success: 10,
+    num_checks_failed: 2,
+    num_checks_total: 12,
+  });
+}

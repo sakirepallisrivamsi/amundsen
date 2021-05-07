@@ -6,6 +6,7 @@ import {
   PreviewData,
   PreviewQueryParams,
   TableMetadata,
+  TableQualityChecks,
   Tag,
 } from 'interfaces';
 
@@ -81,6 +82,17 @@ export const emptyLineage = {
   downstream_entities: [],
 };
 
+export const initialQualityCheckState = {
+  status: null,
+  checks: {
+    external_url: '',
+    last_run_timestamp: 0,
+    num_checks_success: 0,
+    num_checks_failed: 0,
+    num_checks_total: 0,
+  },
+};
+
 export const initialState: TableMetadataReducerState = {
   isLoading: true,
   preview: initialPreviewState,
@@ -88,6 +100,7 @@ export const initialState: TableMetadataReducerState = {
   tableData: initialTableDataState,
   tableOwners: initialOwnersState,
   tableLineage: initialTableLineageState,
+  tableQualityChecks: initialQualityCheckState,
   columnLineageMap: {},
 };
 
@@ -379,6 +392,10 @@ export interface TableMetadataReducerState {
     lineage: Lineage;
   };
   columnLineageMap: ColumnLineageMap;
+  tableQualityChecks: {
+    status: number | null;
+    checks: TableQualityChecks;
+  };
 }
 
 export default function reducer(
