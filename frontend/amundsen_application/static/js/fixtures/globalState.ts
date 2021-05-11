@@ -190,6 +190,17 @@ const globalState: GlobalState = {
       owners: {},
     },
     columnLineageMap: {},
+    tableQualityChecks: {
+      status: null,
+      isLoading: false,
+      checks: {
+        external_url: '',
+        last_run_timestamp: 0,
+        num_checks_success: 0,
+        num_checks_failed: 0,
+        num_checks_total: 0,
+      },
+    },
   },
   lastIndexed: { lastIndexed: 1555632106 },
   tags: {

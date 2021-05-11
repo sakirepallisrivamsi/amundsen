@@ -466,7 +466,7 @@ describe('getColumnLineageLink', () => {
 describe('isTableQualityCheckEnabled', () => {
   it('returns isTableQualityCheckEnabled defined in config', () => {
     const actual = ConfigUtils.isTableQualityCheckEnabled();
-    const expected = AppConfig.tableQualityCheck.isEnabled;
+    const expected = AppConfig.tableQualityChecks.isEnabled;
     expect(actual).toBe(expected);
   });
 });

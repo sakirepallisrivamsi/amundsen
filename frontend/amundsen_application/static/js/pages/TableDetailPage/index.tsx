@@ -29,6 +29,7 @@ import {
   issueTrackingEnabled,
   isTableListLineageEnabled,
   notificationsEnabled,
+  isTableQualityCheckEnabled,
 } from 'config/config-utils';
 
 import BadgeList from 'features/BadgeList';
@@ -69,6 +70,7 @@ import TableHeaderBullets from './TableHeaderBullets';
 import TableIssues from './TableIssues';
 import WatermarkLabel from './WatermarkLabel';
 import WriterLink from './WriterLink';
+import TableQualityChecksLabel from './TableQualityChecks';
 import TableReportsDropdown from './ResourceReportsDropdown';
 import RequestDescriptionText from './RequestDescriptionText';
 import RequestMetadataForm from './RequestMetadataForm';
@@ -457,6 +459,9 @@ export class TableDetail extends React.Component<
                       uriKey={tableData.key}
                     />
                   </EditableSection>
+                  {isTableQualityCheckEnabled() && (
+                    <TableQualityChecksLabel tableKey={tableData.key} />
+                  )}
                   {this.renderProgrammaticDesc(
                     data.programmatic_descriptions.left
                   )}
