@@ -1,0 +1,1506 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Amundsen is a metadata driven application for improving the productivity of data analysts, data scientists and engineers when interacting with data.">
+      
+      
+        <link rel="canonical" href="https://www.amundsen.io/amundsen/">
+      
+      
+        <meta name="author" content="Amundsen Project Authors.">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="img/logos/amundsen_mark_orange.svg">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Amundsen</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="#2b1b81" data-md-color-accent="#2b1b81">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#homepage" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.amundsen.io/amundsen/" title="Amundsen" aria-label="Amundsen" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="img/logos/amundsen_mark_orange.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Amundsen
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Overview
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/amundsen-io/amundsen/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Amundsen
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="." class="md-tabs__link md-tabs__link--active">
+        Overview
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="developer_guide/" class="md-tabs__link">
+          Developer Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="installation/" class="md-tabs__link">
+          User Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="frontend/" class="md-tabs__link">
+          Components
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.amundsen.io/amundsen/" title="Amundsen" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="img/logos/amundsen_mark_orange.svg" width="48" height="48">
+      
+    </a>
+    Amundsen
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/amundsen-io/amundsen/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Amundsen
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="." title="Overview" class="md-nav__link md-nav__link--active">
+      Overview
+    </a>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Developer Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Developer Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="developer_guide/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="issue_labeling/" title="Issue and Feature Labeling" class="md-nav__link">
+      Issue and Feature Labeling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="CONTRIBUTING/" title="Contributing Guide" class="md-nav__link">
+      Contributing Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      User Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="installation/" title="Quick Start" class="md-nav__link">
+      Quick Start
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/index-postgres/" title="How to index metadata for real life databases" class="md-nav__link">
+      How to index metadata for real life databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/data-preview-with-superset/" title="How to setup a preview client with Apache Superset" class="md-nav__link">
+      How to setup a preview client with Apache Superset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/user-profiles/" title="How to setup user profiles" class="md-nav__link">
+      How to setup user profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="databuilder/docs/dashboard_ingestion_guide/" title="How to ingest Dashboard" class="md-nav__link">
+      How to ingest Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/how-to-track-user-metric/" title="How to track user metric for Amundsen" class="md-nav__link">
+      How to track user metric for Amundsen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/badges/" title="How to add table level and column level badges" class="md-nav__link">
+      How to add table level and column level badges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/how-to-search-effective/" title="How to search Amundsen effectively" class="md-nav__link">
+      How to search Amundsen effectively
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="tutorials/how-to-use-amundsen-with-aws-neptune/" title="How to use Amundsen with Amazon Neptune" class="md-nav__link">
+      How to use Amundsen with Amazon Neptune
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Deployment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        Deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="authentication/oidc/" title="Authentication" class="md-nav__link">
+      Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="installation-aws-ecs/aws-ecs-deployment/" title="AWS ECS Installation" class="md-nav__link">
+      AWS ECS Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="k8s_install/" title="K8S Installation" class="md-nav__link">
+      K8S Installation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Components
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Components
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Frontend
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Frontend
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="frontend/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1-2" type="checkbox" id="nav-5-1-2">
+    
+    <label class="md-nav__link" for="nav-5-1-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-1-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="frontend/docs/application_config/" title="Application Config" class="md-nav__link">
+      Application Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="frontend/docs/configuration/" title="React Configuration" class="md-nav__link">
+      React Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="frontend/docs/flask_config/" title="Flask Configuration" class="md-nav__link">
+      Flask Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="frontend/docs/examples/superset_preview_client/" title="Preview Client Setup" class="md-nav__link">
+      Preview Client Setup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="frontend/docs/developer_guide/" title="FE Developer Guide" class="md-nav__link">
+      FE Developer Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="frontend/docs/installation/" title="FE Installation Guide" class="md-nav__link">
+      FE Installation Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="frontend/docs/recommended_practices/" title="Recommended Practices" class="md-nav__link">
+      Recommended Practices
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Search
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        Search
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="search/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2-2" type="checkbox" id="nav-5-2-2">
+    
+    <label class="md-nav__link" for="nav-5-2-2">
+      Proxy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-2-2">
+        Proxy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="search/docs/atlas-search/" title="Atlas Backend" class="md-nav__link">
+      Atlas Backend
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Metadata
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        Metadata
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="metadata/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-2" type="checkbox" id="nav-5-3-2">
+    
+    <label class="md-nav__link" for="nav-5-3-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="metadata/docs/configurations/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="metadata/docs/structure/" title="Metadata API Structure" class="md-nav__link">
+      Metadata API Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-4" type="checkbox" id="nav-5-3-4">
+    
+    <label class="md-nav__link" for="nav-5-3-4">
+      Proxy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-4">
+        Proxy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-4-1" type="checkbox" id="nav-5-3-4-1">
+    
+    <label class="md-nav__link" for="nav-5-3-4-1">
+      Atlas Backend
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-5-3-4-1">
+        Atlas Backend
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="metadata/docs/proxy/atlas_proxy/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="metadata/docs/proxy/atlas/popular_tables/" title="Popular Table" class="md-nav__link">
+      Popular Table
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="metadata/docs/proxy/gremlin/" title="Gremlin Backend" class="md-nav__link">
+      Gremlin Backend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="metadata/docs/proxy/neptune/" title="Neptune Backend" class="md-nav__link">
+      Neptune Backend
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Databuilder
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        Databuilder
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="databuilder/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="databuilder/docs/models/" title="Models" class="md-nav__link">
+      Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="databuilder/docs/dashboard_ingestion_guide/" title="Dashboard Ingestion guide" class="md-nav__link">
+      Dashboard Ingestion guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Common
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Common
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="common/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="roadmap/" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+
+  <a href="https://github.com/amundsen-io/amundsen/edit/master/README.md" title="Edit this page" class="md-icon md-content__icon">
+    &#xE3C9;<!-- edit -->
+  </a>
+
+<!--
+  Hack: check whether the content contains a h1 headline. If it
+  doesn't, the page title (or respectively site name) is used
+  as the main headline.
+-->
+
+
+<!-- Content -->
+<p align="center">
+  <img
+    src="https://raw.githubusercontent.com/amundsen-io/amundsen/master/docs/img/logos/amundsen_logo_on_light.svg?sanitize=true"
+    alt="Amundsen"
+    width="1000"
+  />
+</p>
+
+<p align="center">
+  <a href="https://github.com/amundsen-io/amundsen">
+    <img src="https://img.shields.io/github/stars/amundsen-io/amundsen.svg?style=social" />
+  </a>
+  <a href="https://github.com/amundsen-io/amundsen/blob/master/LICENSE">
+    <img src="https://img.shields.io/:license-Apache%202-blue.svg" />
+  </a>
+  <a href="https://github.com/amundsen-io/amundsen/blob/master/CONTRIBUTING.md">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" />
+  </a>
+  <a href="https://github.com/amundsen-io/amundsen/pulse">
+    <img src="https://img.shields.io/github/commit-activity/w/amundsen-io/amundsen.svg" />
+  </a>
+  <a href="https://img.shields.io/github/contributors/amundsen-io/amundsen.svg">
+    <img src="https://img.shields.io/github/contributors/amundsen-io/amundsen.svg" />
+  </a>
+  <a href="https://twitter.com/amundsenio">
+    <img src="https://img.shields.io/twitter/follow/amundsenio?label=Follow&style=social" />
+  </a>
+  <a href="https://join.slack.com/t/amundsenworkspace/shared_invite/enQtNTk2ODQ1NDU1NDI0LTc3MzQyZmM0ZGFjNzg5MzY1MzJlZTg4YjQ4YTU0ZmMxYWU2MmVlMzhhY2MzMTc1MDg0MzRjNTA4MzRkMGE0Nzk">
+    <img src="https://img.shields.io/badge/slack-join_chat-white.svg?logo=slack&style=social" alt="Slack" />
+  </a>
+</p>
+
+<p>Amundsen is a data discovery and metadata engine for improving the productivity of data analysts, data scientists and engineers when interacting with data. It does that today by indexing data resources (tables, dashboards, streams, etc.) and powering a page-rank style search based on usage patterns (e.g. highly queried tables show up earlier than less queried tables). Think of it as Google search for data. The project is named after Norwegian explorer <a href="https://en.wikipedia.org/wiki/Roald_Amundsen">Roald Amundsen</a>, the first person to discover the South Pole.</p>
+<p><img
+  src="https://raw.githubusercontent.com/lfai/artwork/master/lfaidata-assets/lfaidata/stacked/color/lfaidata-stacked-color.png"
+  alt="LF AI & Data"
+  width="200"
+/></p>
+<p>Amundsen is hosted by the <a href="https://lfaidata.foundation/">LF AI &amp; Data Foundation</a>. It includes three microservices, one data ingestion library and one common library.</p>
+<ul>
+<li><a href="/frontend">amundsenfrontendlibrary</a>: Frontend service which is a Flask application with a React frontend. <img src="https://img.shields.io/github/commit-activity/w/amundsen-io/amundsenfrontendlibrary.svg" /> <img src="https://img.shields.io/github/v/release/amundsen-io/amundsenfrontendlibrary.svg" /></li>
+<li><a href="/search">amundsensearchlibrary</a>: Search service, which leverages Elasticsearch for search capabilities, is used to power frontend metadata searching. <img src="https://img.shields.io/github/commit-activity/w/amundsen-io/amundsensearchlibrary.svg" /> <img src="https://img.shields.io/github/v/release/amundsen-io/amundsensearchlibrary.svg" /></li>
+<li><a href="/metadata">amundsenmetadatalibrary</a>: Metadata service, which leverages Neo4j or Apache Atlas as the persistent layer, to provide various metadata. <img src="https://img.shields.io/github/commit-activity/w/amundsen-io/amundsenmetadatalibrary.svg" /> <img src="https://img.shields.io/github/v/release/amundsen-io/amundsenmetadatalibrary.svg" /></li>
+<li><a href="/databuilder">amundsendatabuilder</a>: Data ingestion library for building metadata graph and search index.
+  Users could either load the data with <a href="/databuilder/example/scripts/sample_data_loader.py">a python script</a> with the library
+  or with an <a href="/databuilder/example/dags">Airflow DAG</a> importing the library. <img src="https://img.shields.io/github/commit-activity/w/amundsen-io/amundsendatabuilder.svg" /> <img src="https://img.shields.io/github/v/release/amundsen-io/amundsendatabuilder.svg" /></li>
+<li><a href="/common">amundsencommon</a>: Amundsen Common library holds common codes among microservices in Amundsen. <img src="https://img.shields.io/github/commit-activity/w/amundsen-io/amundsencommon.svg" /> <img src="https://img.shields.io/github/v/release/amundsen-io/amundsencommon.svg" /></li>
+<li><a href="https://github.com/amundsen-io/amundsengremlin">amundsengremlin</a>: Amundsen Gremlin library holds code used for converting model objects into vertices and edges in gremlin. It&rsquo;s used for loading data into an AWS Neptune backend. <img src="https://img.shields.io/github/commit-activity/w/amundsen-io/amundsengremlin.svg" /> <img src="https://img.shields.io/github/v/release/amundsen-io/amundsengremlin.svg" /></li>
+<li><a href="https://github.com/amundsen-io/amundsenrds">amundsenrds</a>: Amundsenrds contains ORM models to support relational database as metadata backend store in Amundsen. The schema in ORM models follows the logic of databuilder models. Amundsenrds will be used in databuilder and metadatalibrary for metadata storage and retrieval with relational databases. <img src="https://img.shields.io/github/commit-activity/w/amundsen-io/amundsenrds.svg" /> <img src="https://img.shields.io/github/v/release/amundsen-io/amundsenrds.svg" /></li>
+</ul>
+<h2 id="homepage">Homepage<a class="headerlink" href="#homepage" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.amundsen.io/">https://www.amundsen.io/</a></li>
+</ul>
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.amundsen.io/amundsen/">https://www.amundsen.io/amundsen/</a></li>
+</ul>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Python = 3.6 or 3.7</li>
+<li>Node = v10 or v12 (v14 may have compatibility issues)</li>
+<li>npm &gt;= 6</li>
+</ul>
+<h2 id="user-interface">User Interface<a class="headerlink" href="#user-interface" title="Permanent link">&para;</a></h2>
+<p>Please note that the mock images only served as demonstration purpose.</p>
+<ul>
+<li><strong>Landing Page</strong>: The landing page for Amundsen including 1. search bars; 2. popular used tables;</li>
+</ul>
+<p><img alt="" src="https://raw.githubusercontent.com/amundsen-io/amundsen/master/docs/img/landing_page.png" /></p>
+<ul>
+<li><strong>Search Preview</strong>: See inline search results as you type</li>
+</ul>
+<p><img alt="" src="https://raw.githubusercontent.com/amundsen-io/amundsen/master/docs/img/search_preview.png" /></p>
+<ul>
+<li><strong>Table Detail Page</strong>: Visualization of a Hive / Redshift table</li>
+</ul>
+<p><img alt="" src="https://raw.githubusercontent.com/amundsen-io/amundsen/master/docs/img/table_detail_page_with_badges.png" /></p>
+<ul>
+<li><strong>Column detail</strong>: Visualization of columns of a Hive / Redshift table which includes an optional stats display</li>
+</ul>
+<p><img alt="" src="https://raw.githubusercontent.com/amundsen-io/amundsen/master/docs/img/column_details.png" /></p>
+<ul>
+<li><strong>Data Preview Page</strong>: Visualization of table data preview which could integrate with <a href="https://github.com/apache/incubator-superset">Apache Superset</a> or other Data Visualization Tools.</li>
+</ul>
+<p><img alt="" src="https://raw.githubusercontent.com/amundsen-io/amundsen/master/docs/img/data_preview.png" /></p>
+<h2 id="get-involved-in-the-community">Get Involved in the Community<a class="headerlink" href="#get-involved-in-the-community" title="Permanent link">&para;</a></h2>
+<p>Want help or want to help?
+Use the button in our <a href="https://github.com/amundsen-io/amundsen#readme">header</a> to join our slack channel. Contributions are also more than welcome! As explained in <a href="CONTRIBUTING/">CONTRIBUTING.md</a> there are many ways to contribute, it does not all have to be code with new features and bug fixes, also documentation, like FAQ entries, bug reports, blog posts sharing experiences etc. all help move Amundsen forward. If you find a security vulnerability, <a href="./SECURITY.md">please follow this guide</a>.</p>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<p>Please visit the Amundsen installation documentation for a <a href="./docs/installation.md#bootstrap-a-default-version-of-amundsen-using-docker">quick start</a> to bootstrap a default version of Amundsen with dummy data.</p>
+<h2 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h2>
+<p>Please visit <a href="./docs/architecture.md#architecture">Architecture</a> for Amundsen architecture overview.</p>
+<h2 id="supported-entities">Supported Entities<a class="headerlink" href="#supported-entities" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Tables (from Databases)</li>
+<li>People (from HR systems)</li>
+<li>Dashboards</li>
+</ul>
+<h2 id="supported-integrations">Supported Integrations<a class="headerlink" href="#supported-integrations" title="Permanent link">&para;</a></h2>
+<h3 id="table-connectors">Table Connectors<a class="headerlink" href="#table-connectors" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://aws.amazon.com/athena/">Amazon Athena</a></li>
+<li><a href="https://aws.amazon.com/glue/">Amazon Glue</a> and anything built over it</li>
+<li><a href="https://aws.amazon.com/redshift/">Amazon Redshift</a></li>
+<li><a href="https://cassandra.apache.org/">Apache Cassandra</a></li>
+<li><a href="https://druid.apache.org/">Apache Druid</a></li>
+<li><a href="https://hive.apache.org/">Apache Hive</a></li>
+<li>CSV</li>
+<li><a href="https://www.getdbt.com/">dbt</a></li>
+<li><a href="https://delta.io/">Delta Lake</a></li>
+<li><a href="https://cloud.google.com/bigquery">Google BigQuery</a></li>
+<li><a href="https://www.ibm.com/analytics/db2">IBM DB2</a></li>
+<li><a href="https://www.microsoft.com/en-us/sql-server/default.aspx">Microsoft SQL Server</a></li>
+<li><a href="https://www.mysql.com/">MySQL</a></li>
+<li><a href="https://www.oracle.com/index.html">Oracle</a> (through dbapi or sql_alchemy)</li>
+<li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+<li><a href="https://trino.io/">Trino (formerly Presto SQL)</a></li>
+<li><a href="https://www.vertica.com/">Vertica</a></li>
+<li><a href="https://www.snowflake.com/">Snowflake</a></li>
+</ul>
+<p>Amundsen can also connect to any database that provides <code>dbapi</code> or <code>sql_alchemy</code> interface (which most DBs provide).</p>
+<h3 id="dashboard-connectors">Dashboard Connectors<a class="headerlink" href="#dashboard-connectors" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://mode.com/">Mode Analytics</a></li>
+<li><a href="https://redash.io/">Redash</a></li>
+<li><a href="https://tableau.com/">Tableau</a></li>
+</ul>
+<h3 id="etl-orchestration">ETL Orchestration<a class="headerlink" href="#etl-orchestration" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://airflow.apache.org/">Apache Airflow</a></li>
+</ul>
+<h3 id="bi-viz-tool">BI Viz Tool<a class="headerlink" href="#bi-viz-tool" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://superset.incubator.apache.org/">Apache Superset</a></li>
+</ul>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Please visit <a href="./docs/installation.md">Installation guideline</a> on how to install Amundsen.</p>
+<h2 id="roadmap">Roadmap<a class="headerlink" href="#roadmap" title="Permanent link">&para;</a></h2>
+<p>Please visit <a href="./docs/roadmap.md#amundsen-roadmap">Roadmap</a> if you are interested in Amundsen upcoming roadmap items.</p>
+<h2 id="blog-posts-and-interviews">Blog Posts and Interviews<a class="headerlink" href="#blog-posts-and-interviews" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://eng.lyft.com/amundsen-lyfts-data-discovery-metadata-engine-62d27254fbb9">Amundsen - Lyft&rsquo;s data discovery &amp; metadata engine</a> (April 2019)</li>
+<li><a href="https://softwareengineeringdaily.com/2019/04/16/lyft-data-discovery-with-tao-feng-and-mark-grover/">Software Engineering Daily podcast on Amundsen</a> (April 2019)</li>
+<li><a href="https://youtu.be/WVjss62XIG0">How Lyft Drives Data Discovery</a> (July 2019)</li>
+<li><a href="https://www.dataengineeringpodcast.com/amundsen-data-discovery-episode-92/">Data Engineering podcast on Solving Data Discovery At Lyft</a> (Aug 2019)</li>
+<li><a href="https://eng.lyft.com/open-sourcing-amundsen-a-data-discovery-and-metadata-platform-2282bb436234">Open Sourcing Amundsen: A Data Discovery And Metadata Platform</a> (Oct 2019)</li>
+<li><a href="https://technology.edmunds.com/2020/05/27/Adding-Data-Quality-into-Amundsen-with-Programmatic-Descriptions/">Adding Data Quality into Amundsen with Programmatic Descriptions</a> by <a href="https://github.com/samshuster">Sam Shuster</a> from <a href="https://www.edmunds.com/">Edmunds.com</a> (May 2020)</li>
+<li><a href="https://medium.com/wbaa/facilitating-data-discovery-with-apache-atlas-and-amundsen-631baa287c8b">Facilitating Data discovery with Apache Atlas and Amundsen</a> by <a href="https://github.com/mgorsk1">Mariusz Górski</a> from <a href="https://www.ing.com/Home.htm">ING</a> (June 2020)</li>
+<li><a href="https://developer.squareup.com/blog/using-amundsen-to-support-user-privacy-via-metadata-collection-at-square/">Using Amundsen to Support User Privacy via Metadata Collection at Square</a> by <a href="https://github.com/alran">Alyssa Ransbury</a> from <a href="https://squareup.com/">Square</a> (July 14, 2020)</li>
+<li><a href="https://lfai.foundation/blog/2020/08/11/amundsen-joins-lf-ai-as-new-incubation-project/">Amundsen Joins LF AI as New Incubation Project</a> (Aug 11, 2020)</li>
+<li><a href="https://eng.lyft.com/amundsen-1-year-later-7b60bf28602">Amundsen: one year later</a> (Oct 6, 2020)</li>
+</ul>
+<h2 id="talks">Talks<a class="headerlink" href="#talks" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Disrupting Data Discovery {<a href="https://www.slideshare.net/taofung/strata-sf-amundsen-presentation">slides</a>, <a href="https://www.youtube.com/watch?v=m1B-ptm0Rrw">recording</a>} (Strata SF, March 2019)</li>
+<li>Amundsen: A Data Discovery Platform from Lyft {<a href="https://www.slideshare.net/taofung/data-council-sf-amundsen-presentation">slides</a>} (Data Council SF, April 2019)</li>
+<li>Disrupting Data Discovery {<a href="https://www.slideshare.net/markgrover/disrupting-data-discovery">slides</a>} (Strata London, May 2019)</li>
+<li>ING Data Analytics Platform (Amundsen is mentioned) {<a href="https://static.sched.com/hosted_files/kccnceu19/65/ING%20Data%20Analytics%20Platform.pdf">slides</a>, <a href="https://www.youtube.com/watch?v=8cE9ppbnDPs&amp;t=465">recording</a> } (Kubecon Barcelona, May 2019)</li>
+<li>Disrupting Data Discovery {<a href="https://www.slideshare.net/PhilippeMizrahi/meetup-sf-amundsen">slides</a>, <a href="https://www.youtube.com/watch?v=NgeCOVjSJ7A">recording</a>} (Making Big Data Easy SF, May 2019)</li>
+<li>Disrupting Data Discovery {<a href="https://www.slideshare.net/TamikaTannis/neo4j-graphtour-santa-monica-2019-amundsen-presentation-173073727">slides</a>, <a href="https://www.youtube.com/watch?v=Gr3-RfWn49A">recording</a>} (Neo4j Graph Tour Santa Monica, September 2019)</li>
+<li>Disrupting Data Discovery {<a href="https://www.slideshare.net/secret/56EPbcvswqyH90">slides</a>} (IDEAS SoCal AI &amp; Data Science Conference, Oct 2019)</li>
+<li>Data Discovery with Amundsen by <a href="https://twitter.com/radialmind">Gerard Toonstra</a> from Coolblue {<a href="https://docs.google.com/presentation/d/1rkrP8ZobkLPZbwisrLWTdPN5I52SgVGM1eqAFDJXj2A/edit?usp=sharing">slides</a>} and {<a href="https://www.youtube.com/watch?v=T54EO1MuE7I&amp;list=PLqYhGsQ9iSEq7fDvXcd67iVzx5nsf9xnK&amp;index=17">talk</a>} (BigData Vilnius 2019)</li>
+<li>Towards Enterprise Grade Data Discovery and Data Lineage with Apache Atlas and Amundsen by <a href="https://github.com/verdan">Verdan Mahmood</a> and Marek Wiewiorka from ING {<a href="https://docs.google.com/presentation/d/1FixTTNd1dt_f3PAKhL1KLOeOLsIQq0iFvQA6qlpjIg0/edit#slide=id.p1">slides</a>, <a href="https://bigdatatechwarsaw.eu/agenda/">talk</a>} (Big Data Technology Warsaw Summit 2020)</li>
+<li>Airflow @ Lyft (which covers how we integrate Airflow and Amundsen) by <a href="https://github.com/feng-tao">Tao Feng</a> {<a href="https://www.slideshare.net/taofung/airflow-at-lyft-airflow-summit2020">slides</a> and <a href="https://airflowsummit.org/sessions/how-airbnb-twitter-lyft-use-airflow/">website</a>} (Airflow Summit 2020)</li>
+<li>Data DAGs with lineage for fun and for profit by <a href="https://github.com/bolkedebruin">Bolke de Bruin</a> {<a href="https://airflowsummit.org/sessions/data-dags-with-lineage/">website</a>} (Airflow Summit 2020)</li>
+<li>Solving Data Discovery Challenges at Lyft with Amundsen, an Open-source Metadata Platform by <a href="https://github.com/feng-tao">Tao Feng</a> (<a href="https://databricks.com/session_eu20/solving-data-discovery-challenges-at-lyft-with-amundsen-an-open-source-metadata-platform">Data+AI summit Europe 2020</a>)</li>
+<li>Data Discovery at Databricks with Amundsen by <a href="https://github.com/feng-tao">Tao Feng</a> and <a href="https://www.linkedin.com/in/tianru-zhou-134868132/">Tianru Zhou</a> (<a href="https://databricks.com/session_na21/data-discovery-at-databricks-with-amundsen">Data+AI summit NA 2021</a>)</li>
+</ul>
+<h2 id="related-articles">Related Articles<a class="headerlink" href="#related-articles" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://towardsdatascience.com/how-linkedin-uber-lyft-airbnb-and-netflix-are-solving-data-management-and-discovery-for-machine-9b79ee9184bb">How LinkedIn, Uber, Lyft, Airbnb and Netflix are Solving Data Management and Discovery for Machine Learning Solutions</a></li>
+<li><a href="https://medium.com/@torokyle/data-discovery-in-2020-3c907383caa0">Data Discovery in 2020</a></li>
+<li><a href="https://medium.com/memory-leak/4-data-trends-to-watch-in-2020-491707902c09">4 Data Trends to Watch in 2020</a></li>
+<li><a href="https://medium.com/work-bench/work-bench-snapshot-the-evolution-of-data-discovery-catalog-2f6c0425616b">Work-Bench Snapshot: The Evolution of Data Discovery &amp; Catalog</a></li>
+<li><a href="https://www.infoq.com/presentations/data-engineering-pipelines-warehouses/">Future of Data Engineering</a></li>
+<li><a href="https://www.oreilly.com/radar/governance-and-discovery/">Governance and Discovery</a></li>
+<li><a href="https://towardsdatascience.com/a-data-engineers-perspective-on-data-democratization-a8aed10f4253?source=friends_link&amp;sk=63638570d03e4145265932c12af33f9d">A Data Engineer’s Perspective On Data Democratization</a></li>
+<li><a href="https://graphaware.com/graphaware/2020/02/17/graph-technology-landscape-2020.html">Graph Technology Landscape 2020</a></li>
+<li><a href="https://datastrategy.substack.com/p/in-house-data-discovery-platforms">In-house Data Discovery platforms</a></li>
+<li><a href="https://landscape.lfai.foundation/">Linux Foundation AI Foundation Landscape</a></li>
+<li><a href="https://thenewstack.io/lyfts-amundsen-data-discovery-with-built-in-trust/">Lyft’s Amundsen: Data-Discovery with Built-In Trust</a></li>
+<li><a href="https://towardsdatascience.com/how-to-find-and-organize-your-data-from-the-command-line-852a4042b2be">How to find and organize your data from the command-line</a></li>
+<li><a href="https://medium.com/bagelcode/data-discovery-platform-at-bagelcode-b58a622d17fd">Data Discovery Platform at Bagelcode</a></li>
+<li><a href="https://towardsdatascience.com/cataloging-tools-for-data-teams-8d62d7a4cd95">Cataloging Tools for Data Teams</a></li>
+<li><a href="https://eugeneyan.com/writing/data-discovery-platforms/">An Overview of Data Discovery Platforms and Open Source Solutions</a></li>
+<li><a href="https://medium.com/seek-blog/hacking-data-discovery-with-amundsen-c55d262014f4">Hacking Data Discovery in AWS with Amundsen at SEEK</a></li>
+<li><a href="https://medium.com/talabat-tech/a-step-by-step-guide-deploying-amundsen-on-google-cloud-platform-ee4ef20d81f5">A step-by-step guide deploying Amundsen on Google Cloud Platform</a></li>
+<li><a href="https://getindata.com/blog/machine-learning-features-discovery-feast-amundsen">Machine Learning Features discovery with Feast and Amundsen</a></li>
+<li><a href="https://www.rea-group.com/blog/data-discovery/">Data discovery at REA group</a></li>
+</ul>
+<h2 id="community-meetings">Community meetings<a class="headerlink" href="#community-meetings" title="Permanent link">&para;</a></h2>
+<p>Community meetings are held on the first Thursday of every month at 9 AM Pacific, Noon Eastern, 6 PM Central European Time. <a href="https://zoom.us/j/92594007352?pwd=Rmo4SGp4WnY3eGlzclgrWlp6bTNTQT09">Link to join</a></p>
+<h3 id="upcoming-meetings-notes">Upcoming meetings &amp; notes<a class="headerlink" href="#upcoming-meetings-notes" title="Permanent link">&para;</a></h3>
+<p>You can the exact date for the next meeting and the agenda a few weeks before the meeting in <a href="https://docs.google.com/document/d/1bsJWNt1GBFmV-aRbHFuYgMFnMgIIvAmbhsvDatb0Vis">this doc</a>.</p>
+<p>Notes from all past meetings are available <a href="https://docs.google.com/document/d/1bsJWNt1GBFmV-aRbHFuYgMFnMgIIvAmbhsvDatb0Vis">here</a>.</p>
+<h2 id="who-uses-amundsen">Who uses Amundsen?<a class="headerlink" href="#who-uses-amundsen" title="Permanent link">&para;</a></h2>
+<p>Here is the list of organizations that are using Amundsen today. If your organization uses Amundsen, please file a PR and update this list.</p>
+<p>Currently <strong>officially</strong> using Amundsen:</p>
+<ol>
+<li><a href="https://asana.com/">Asana</a></li>
+<li><a href="https://site.bagelcode.com/">Bagelcode</a></li>
+<li><a href="https://www.bang-olufsen.com/en">Bang &amp; Olufsen</a></li>
+<li><a href="https://www.brex.com/">Brex</a></li>
+<li><a href="https://www.cameo.com">Cameo</a></li>
+<li><a href="https://cimpress.com">Cimpress Technology</a></li>
+<li><a href="https://www.colesgroup.com.au/home/">Coles Group</a></li>
+<li><a href="https://www.convoy.com">Convoy</a></li>
+<li><a href="https://www.databricks.com/">Databricks</a></li>
+<li><a href="https://datasprints.com/">Data Sprints</a></li>
+<li><a href="https://www.dcard.tw/">Dcard</a></li>
+<li><a href="https://www.devoted.com/">Devoted Health</a></li>
+<li><a href="https://dhigroupinc.com/">DHI Group</a></li>
+<li><a href="https://www.edmunds.com/">Edmunds</a></li>
+<li><a href="https://everfi.com/">Everfi</a></li>
+<li><a href="https://gusto.com/">Gusto</a></li>
+<li><a href="https://hurb.com">Hurb</a></li>
+<li><a href="https://www.ing.com/Home.htm">ING</a></li>
+<li><a href="https://www.instacart.com/">Instacart</a></li>
+<li><a href="https://www.irobot.com">iRobot</a></li>
+<li><a href="https://lett.digital/">Lett</a></li>
+<li><a href="https://www.lmc.eu/cs/">LMC</a></li>
+<li><a href="https://loft.com.br">Loft</a></li>
+<li><a href="https://www.lyft.com/">Lyft</a></li>
+<li><a href="https://merlinjobs.com">Merlin</a></li>
+<li><a href="https://picpay.com.br">PicPay</a></li>
+<li><a href="https://company.plarium.com/en/studio/russia-krasnodar/">Plarium Krasnodar</a></li>
+<li><a href="https://careers.pubg.com/">PUBG</a></li>
+<li><a href="https://rapido.bike/Careers?lan=en" title="India's largest bike taxi service">Rapido</a></li>
+<li><a href="https://www.rea-group.com/">REA Group</a></li>
+<li><a href="https://www.remitly.com/">Remitly</a></li>
+<li><a href="https://www.snap.com/en-US">Snap</a></li>
+<li><a href="https://squareup.com/us/en">Square</a></li>
+<li><a href="https://www.thetileapp.com">Tile</a></li>
+<li><a href="https://wetransfer.com">WeTransfer</a></li>
+<li><a href="https://www.workday.com/en-us/homepage.html">Workday</a></li>
+</ol>
+<h1 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h1>
+<p><a href="/LICENSE">Apache 2.0 License.</a></p>
+
+<!-- Source files -->
+
+  
+
+
+<!-- Support for mkdocs-git-revision-date-localized-plugin -->
+
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+        
+          <a href="architecture/" title="Architecture" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Architecture
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018-2020 Amundsen Project Authors.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    
+      <a href="https://www.amundsen.io/" target="_blank" rel="noopener" title="globe" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/amundsen-io" target="_blank" rel="noopener" title="github-alt" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/amundsenio" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/the-linux-foundation/" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"."}})</script>
+      
+    
+  </body>
+</html>

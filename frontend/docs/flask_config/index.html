@@ -1,0 +1,1587 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Amundsen is a metadata driven application for improving the productivity of data analysts, data scientists and engineers when interacting with data.">
+      
+      
+        <link rel="canonical" href="https://www.amundsen.io/amundsen/frontend/docs/flask_config/">
+      
+      
+        <meta name="author" content="Amundsen Project Authors.">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../img/logos/amundsen_mark_orange.svg">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Flask Configuration - Amundsen</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="#2b1b81" data-md-color-accent="#2b1b81">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#flask-configuration" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.amundsen.io/amundsen/" title="Amundsen" aria-label="Amundsen" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../../img/logos/amundsen_mark_orange.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Amundsen
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Flask Configuration
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/amundsen-io/amundsen/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Amundsen
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Overview
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../developer_guide/" class="md-tabs__link">
+          Developer Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../installation/" class="md-tabs__link">
+          User Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" class="md-tabs__link md-tabs__link--active">
+          Components
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.amundsen.io/amundsen/" title="Amundsen" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../../img/logos/amundsen_mark_orange.svg" width="48" height="48">
+      
+    </a>
+    Amundsen
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/amundsen-io/amundsen/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Amundsen
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Developer Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Developer Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer_guide/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../issue_labeling/" title="Issue and Feature Labeling" class="md-nav__link">
+      Issue and Feature Labeling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../CONTRIBUTING/" title="Contributing Guide" class="md-nav__link">
+      Contributing Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      User Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../installation/" title="Quick Start" class="md-nav__link">
+      Quick Start
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/index-postgres/" title="How to index metadata for real life databases" class="md-nav__link">
+      How to index metadata for real life databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/data-preview-with-superset/" title="How to setup a preview client with Apache Superset" class="md-nav__link">
+      How to setup a preview client with Apache Superset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/user-profiles/" title="How to setup user profiles" class="md-nav__link">
+      How to setup user profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databuilder/docs/dashboard_ingestion_guide/" title="How to ingest Dashboard" class="md-nav__link">
+      How to ingest Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/how-to-track-user-metric/" title="How to track user metric for Amundsen" class="md-nav__link">
+      How to track user metric for Amundsen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/badges/" title="How to add table level and column level badges" class="md-nav__link">
+      How to add table level and column level badges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/how-to-search-effective/" title="How to search Amundsen effectively" class="md-nav__link">
+      How to search Amundsen effectively
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/how-to-use-amundsen-with-aws-neptune/" title="How to use Amundsen with Amazon Neptune" class="md-nav__link">
+      How to use Amundsen with Amazon Neptune
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Deployment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        Deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../authentication/oidc/" title="Authentication" class="md-nav__link">
+      Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../installation-aws-ecs/aws-ecs-deployment/" title="AWS ECS Installation" class="md-nav__link">
+      AWS ECS Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../k8s_install/" title="K8S Installation" class="md-nav__link">
+      K8S Installation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Components
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Components
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1" checked>
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Frontend
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Frontend
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1-2" type="checkbox" id="nav-5-1-2" checked>
+    
+    <label class="md-nav__link" for="nav-5-1-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-1-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../application_config/" title="Application Config" class="md-nav__link">
+      Application Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../configuration/" title="React Configuration" class="md-nav__link">
+      React Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Flask Configuration
+      </label>
+    
+    <a href="./" title="Flask Configuration" class="md-nav__link md-nav__link--active">
+      Flask Configuration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#custom-routes" class="md-nav__link">
+    Custom Routes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-preview" class="md-nav__link">
+    Dashboard Preview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-configure-mode-dashboard-preview" class="md-nav__link">
+    How to configure Mode dashboard preview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-enable-authorization-on-mode-dashboard" class="md-nav__link">
+    How to enable authorization on Mode dashboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-support-preview-of-different-product" class="md-nav__link">
+    How to support preview of different product?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mail-client-features" class="md-nav__link">
+    Mail Client Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-tracking-integration-features" class="md-nav__link">
+    Issue Tracking Integration Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programmatic-descriptions" class="md-nav__link">
+    Programmatic Descriptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uneditable-table-descriptions" class="md-nav__link">
+    Uneditable Table Descriptions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../examples/superset_preview_client/" title="Preview Client Setup" class="md-nav__link">
+      Preview Client Setup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../developer_guide/" title="FE Developer Guide" class="md-nav__link">
+      FE Developer Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../installation/" title="FE Installation Guide" class="md-nav__link">
+      FE Installation Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../recommended_practices/" title="Recommended Practices" class="md-nav__link">
+      Recommended Practices
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Search
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        Search
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../search/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2-2" type="checkbox" id="nav-5-2-2">
+    
+    <label class="md-nav__link" for="nav-5-2-2">
+      Proxy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-2-2">
+        Proxy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../search/docs/atlas-search/" title="Atlas Backend" class="md-nav__link">
+      Atlas Backend
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Metadata
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        Metadata
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-2" type="checkbox" id="nav-5-3-2">
+    
+    <label class="md-nav__link" for="nav-5-3-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/configurations/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/structure/" title="Metadata API Structure" class="md-nav__link">
+      Metadata API Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-4" type="checkbox" id="nav-5-3-4">
+    
+    <label class="md-nav__link" for="nav-5-3-4">
+      Proxy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-4">
+        Proxy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-4-1" type="checkbox" id="nav-5-3-4-1">
+    
+    <label class="md-nav__link" for="nav-5-3-4-1">
+      Atlas Backend
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-5-3-4-1">
+        Atlas Backend
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/proxy/atlas_proxy/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/proxy/atlas/popular_tables/" title="Popular Table" class="md-nav__link">
+      Popular Table
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/proxy/gremlin/" title="Gremlin Backend" class="md-nav__link">
+      Gremlin Backend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/proxy/neptune/" title="Neptune Backend" class="md-nav__link">
+      Neptune Backend
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Databuilder
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        Databuilder
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databuilder/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databuilder/docs/models/" title="Models" class="md-nav__link">
+      Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../databuilder/docs/dashboard_ingestion_guide/" title="Dashboard Ingestion guide" class="md-nav__link">
+      Dashboard Ingestion guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Common
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Common
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../common/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../roadmap/" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#custom-routes" class="md-nav__link">
+    Custom Routes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-preview" class="md-nav__link">
+    Dashboard Preview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-configure-mode-dashboard-preview" class="md-nav__link">
+    How to configure Mode dashboard preview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-enable-authorization-on-mode-dashboard" class="md-nav__link">
+    How to enable authorization on Mode dashboard
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-support-preview-of-different-product" class="md-nav__link">
+    How to support preview of different product?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mail-client-features" class="md-nav__link">
+    Mail Client Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#issue-tracking-integration-features" class="md-nav__link">
+    Issue Tracking Integration Features
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programmatic-descriptions" class="md-nav__link">
+    Programmatic Descriptions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uneditable-table-descriptions" class="md-nav__link">
+    Uneditable Table Descriptions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+
+  <a href="https://github.com/amundsen-io/amundsenfrontendlibrary/edit/master/docs/flask_config.md" title="Edit this page" class="md-icon md-content__icon">
+    &#xE3C9;<!-- edit -->
+  </a>
+
+<!--
+  Hack: check whether the content contains a h1 headline. If it
+  doesn't, the page title (or respectively site name) is used
+  as the main headline.
+-->
+
+
+<!-- Content -->
+<h1 id="flask-configuration">Flask configuration<a class="headerlink" href="#flask-configuration" title="Permanent link">&para;</a></h1>
+<p>After modifying any variable in <a href="https://github.com/lyft/amundsenfrontendlibrary/blob/master/amundsen_application/config.py">config.py</a> described in this document, be sure to rebuild your application with these changes.</p>
+<p><strong>NOTE: This document is a work in progress and does not include 100% of features. We welcome PRs to complete this document</strong></p>
+<h2 id="custom-routes">Custom Routes<a class="headerlink" href="#custom-routes" title="Permanent link">&para;</a></h2>
+<p>In order to add any custom Flask endpoints to Amundsen&rsquo;s frontend application, configure a function on the <code>INIT_CUSTOM_ROUTES</code> variable. This function takes the created Flask application and can leverage Flask&rsquo;s <a href="https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.add_url_rule">add_url_rule</a> method to add custom routes.</p>
+<p>Example: Setting <code>INIT_CUSTOM_ROUTES</code> to the <code>init_custom_routes</code> method below will expose a <code>/custom_route</code> endpoint on the frontend application.
+<div class="highlight"><pre><span></span><code>def init_custom_routes<span class="o">(</span>app: Flask<span class="o">)</span> -&gt; None:
+  app.add_url_rule<span class="o">(</span><span class="s1">&#39;/custom_route&#39;</span>, <span class="s1">&#39;custom_route&#39;</span>, custom_route<span class="o">)</span>
+
+def custom_route<span class="o">()</span>:
+  pass
+</code></pre></div></p>
+<h2 id="dashboard-preview">Dashboard Preview<a class="headerlink" href="#dashboard-preview" title="Permanent link">&para;</a></h2>
+<p>This service provides an API to download preview image of dashboard resources, which currently only supports <a href="https://app.mode.com/">Mode</a>.</p>
+<p>The dashboard preview image is cached in user&rsquo;s browser up to a day. In order to adjust this you can change the value of <code>DASHBOARD_PREVIEW_IMAGE_CACHE_MAX_AGE_SECONDS</code></p>
+<h3 id="how-to-configure-mode-dashboard-preview">How to configure Mode dashboard preview<a class="headerlink" href="#how-to-configure-mode-dashboard-preview" title="Permanent link">&para;</a></h3>
+<p>Add the following environment variables:
+<div class="highlight"><pre><span></span><code>    CREDENTIALS_MODE_ADMIN_TOKEN
+    CREDENTIALS_MODE_ADMIN_PASSWORD
+    MODE_ORGANIZATION
+</code></pre></div></p>
+<h4 id="how-to-enable-authorization-on-mode-dashboard">How to enable authorization on Mode dashboard<a class="headerlink" href="#how-to-enable-authorization-on-mode-dashboard" title="Permanent link">&para;</a></h4>
+<p>By default, Amundsen does not do any authorization on showing preview. By registering name of the Mode preview class in configuration, you can enable authorization.
+<div class="highlight"><pre><span></span><code>    <span class="nv">ACL_ENABLED_DASHBOARD_PREVIEW</span> <span class="o">=</span> <span class="o">{</span><span class="s1">&#39;ModePreview&#39;</span><span class="o">}</span>
+</code></pre></div>
+Amundsen ingests Mode dashboards only from the shared space, which all registered Mode users are able to view. Therefore our authorization first validates if the current user is registered in Mode. This feature is dependent on Amundsen also ingesting Mode user information via the <a href="https://github.com/lyft/amundsendatabuilder/blob/master/README.md#modedashboarduserextractor">ModeDashboardUserExtractor</a> and the metadata service version must be at least <a href="https://github.com/lyft/amundsenmetadatalibrary/releases/tag/v2.5.2">v2.5.2</a>.</p>
+<h3 id="how-to-support-preview-of-different-product">How to support preview of different product?<a class="headerlink" href="#how-to-support-preview-of-different-product" title="Permanent link">&para;</a></h3>
+<p>You can add preview support for different products by adding its preview class to <a href="https://github.com/lyft/amundsenfrontendlibrary/blob/master/amundsen_application/api/preview/dashboard/dashboard_preview/preview_factory_method.py#L27">DefaultPreviewMethodFactory</a>
+In order to develop new preview class, you need to implement the class that inherits <a href="https://github.com/lyft/amundsenfrontendlibrary/blob/master/amundsen_application/base/base_preview.py#L4">BasePreview</a> class and <a href="https://github.com/lyft/amundsenfrontendlibrary/blob/master/amundsen_application/api/preview/dashboard/dashboard_preview/mode_preview.py#L28">ModePreview</a> would be a great example.</p>
+<h2 id="mail-client-features">Mail Client Features<a class="headerlink" href="#mail-client-features" title="Permanent link">&para;</a></h2>
+<p>Amundsen has two features that leverage the custom mail client &ndash; the feedback tool and notifications. For these features a custom implementation of <a href="https://github.com/lyft/amundsenfrontendlibrary/blob/master/amundsen_application/base/base_mail_client.py">base_mail_client</a> must be mapped to the <code>MAIL_CLIENT</code> configuration variable.</p>
+<p>To fully enable these features in the UI, the application configuration variables for these features must also be set to true. Please see this <a href="../application_config/#mail-client-features">entry</a> in our application configuration doc for further information.</p>
+<h2 id="issue-tracking-integration-features">Issue Tracking Integration Features<a class="headerlink" href="#issue-tracking-integration-features" title="Permanent link">&para;</a></h2>
+<p>Amundsen has a feature to allow display of associated tickets within the table detail view. The feature both displays
+open tickets and allows users to report new tickets associated with the table. These tickets must contain the
+<code>table_uri</code> within the ticket text in order to be displayed; the <code>table_uri</code> is automatically added to tickets created
+via the feature. Tickets are displayed from most recent to oldest, and currently only open tickets are displayed. Currently only
+ <a href="https://www.atlassian.com/software/jira">JIRA</a> is supported. The UI must also be enabled to use this feature, please
+ see configuration notes <a href="../application_config/#issue-tracking-features">here</a>.</p>
+<p>There are several configuration
+settings in <code>config.py</code> that should be set in order to use this feature.</p>
+<p>Here are the settings and what they should be set to
+<div class="highlight"><pre><span></span><code>    <span class="n">ISSUE_LABELS</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># type: List[str] (Optional labels to be set on the created tickets)</span>
+    <span class="n">ISSUE_TRACKER_URL</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: str (Your JIRA environment, IE &#39;https://jira.net&#39;)</span>
+    <span class="n">ISSUE_TRACKER_USER</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: str (Recommended to be a service account)</span>
+    <span class="n">ISSUE_TRACKER_PASSWORD</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: str</span>
+    <span class="n">ISSUE_TRACKER_PROJECT_ID</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: int (Project ID for the project you would like JIRA tickets to be created in)</span>
+    <span class="n">ISSUE_TRACKER_CLIENT</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: str (Fully qualified class name and path)</span>
+    <span class="n">ISSUE_TRACKER_CLIENT_ENABLED</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># type: bool (Enabling the feature, must be set to True)</span>
+    <span class="n">ISSUE_TRACKER_MAX_RESULTS</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># type: int (Max issues to display at a time)</span>
+</code></pre></div></p>
+<h2 id="programmatic-descriptions">Programmatic Descriptions<a class="headerlink" href="#programmatic-descriptions" title="Permanent link">&para;</a></h2>
+<p>Amundsen supports configuring other mark down supported non-editable description boxes on the table page.
+This can be useful if you have multiple writers which want to write different pieces of information to Amundsen
+that are either very company specific and thus would never be directly integrated into Amundsen or require long form text
+to properly convey the information.</p>
+<p>What are some more specific examples of what could be used for this?
+- You have an existing process that generates quality reports for a dataset that you want to embed in the table page.
+- You have a process that detects pii information (also adding the appropriate tag/badge) but also generates a simple
+report to provide context.
+- You have extended table information that is applicable to your datastore which you want to scrape and provide in the
+table page</p>
+<p>Programmatic descriptions are referred to by a &ldquo;description source&rdquo; which is a unique identifier.
+In the UI, they will appear on the table page under structured metadata.</p>
+<p>In config.py you can then configure the descriptions to have a custom order, as well as whether or not they should exist in the left column or right column.
+<div class="highlight"><pre><span></span><code>PROGRAMMATIC_DISPLAY = {
+    &#39;RIGHT&#39;: {
+      &quot;test3&quot; : {},
+      &quot;test2&quot; : { &quot;display_order&quot;: 0 }
+    },
+    &#39;LEFT&#39;: {
+      &quot;test1&quot; : { &quot;display_order&quot;: 1 },
+      &quot;test0&quot; : { &quot;display_order&quot;: 0 },
+    },
+    &#39;test4&#39;: {&quot;display_order&quot;: 0},
+}
+</code></pre></div>
+Description sources not mentioned in the configuration will be alphabetically placed at the bottom of the list. If <code>PROGRAMMATIC_DISPLAY</code> is left at <code>None</code> all added fields will show up in the order in which they were returned from the backend. Here is a screenshot of what it would look like in the bottom left:</p>
+<p><img src='img/programmatic_descriptions.png' width='50%' /></p>
+<h2 id="uneditable-table-descriptions">Uneditable Table Descriptions<a class="headerlink" href="#uneditable-table-descriptions" title="Permanent link">&para;</a></h2>
+<p>Amundsen supports configuring table and column description to be non-editable for selective tables. You may want to make table
+descriptions non-editable due to various reasons such as table already has table description from source of truth.
+You can define matching rules in  <a href="https://github.com/lyft/amundsenfrontendlibrary/blob/master/amundsen_application/config.py">config.py</a> for selecting tables. This configuration is useful as table selection criteria can
+be company specific which will not directly integrated with Amundsen.
+You can use different combinations of schema and table name for selecting tables.</p>
+<p>Here are some examples when this feature can be used:
+1. You want to set all tables with a given schema or schema pattern as un-editable.
+2. You want to set all tables with a specific table name pattern in a given schema pattern as un-editable.
+3. You want to set all tables with a given table name pattern as un-editable.</p>
+<p>Amundsen has two variables in <code>config.py</code> file which can be used to define match rules:
+1. <code>UNEDITABLE_SCHEMAS</code> : Set of schemas where all tables should be un-editable. It takes exact schema name.
+2. <code>UNEDITABLE_TABLE_DESCRIPTION_MATCH_RULES</code> : List of MatchRuleObject, where each MatchRuleObject consists of regex for
+schema name or regex for table name or both.</p>
+<p>Purpose of <code>UNEDITABLE_SCHEMAS</code> can be fulfilled by <code>UNEDITABLE_TABLE_DESCRIPTION_MATCH_RULES</code> but we are keeping both
+variables for backward compatibility.
+If you want to restrict tables from a given schemas then you can use <code>UNEDITABLE_SCHEMAS</code> as follows:
+<div class="highlight"><pre><span></span><code><span class="n">UNEDITABLE_SCHEMAS</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;schema1&#39;</span><span class="p">,</span> <span class="s1">&#39;schema2&#39;</span><span class="p">])</span>
+</code></pre></div>
+After above configuration, all tables in &lsquo;schema1&rsquo; and &lsquo;schema2&rsquo; will have non-editable table and column descriptions.</p>
+<p>If you have more complex matching rules you can use <code>UNEDITABLE_TABLE_DESCRIPTION_MATCH_RULES</code>. It provides you more flexibility
+and control as you can create multiple match rules and use regex for matching schema and table names.</p>
+<p>You can configure your match rules in <code>config.py</code> as follow:
+<div class="highlight"><pre><span></span><code><span class="n">UNEDITABLE_TABLE_DESCRIPTION_MATCH_RULES</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1"># match rule for all table in schema1</span>
+        <span class="n">MatchRuleObject</span><span class="p">(</span><span class="n">schema_regex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;^(schema1)&quot;</span><span class="p">),</span>
+        <span class="c1"># macth rule for all tables in schema2 and schema3</span>
+        <span class="n">MatchRuleObject</span><span class="p">(</span><span class="n">schema_regex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;^(schema2|schema3)&quot;</span><span class="p">),</span>
+        <span class="c1"># match rule for tables in schema4 with table name pattern &#39;noedit_*&#39;</span>
+        <span class="n">MatchRuleObject</span><span class="p">(</span><span class="n">schema_regex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;^(schema4)&quot;</span><span class="p">,</span> <span class="n">table_name_regex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;^noedit_([a-zA-Z_0-9]+)&quot;</span><span class="p">),</span>
+        <span class="c1"># match rule for tables in schema5, schema6 and schema7 with table name pattern &#39;noedit_*&#39;</span>
+        <span class="n">MatchRuleObject</span><span class="p">(</span><span class="n">schema_regex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;^(schema5|schema6|schema7)&quot;</span><span class="p">,</span> <span class="n">table_name_regex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;^noedit_([a-zA-Z_0-9]+)&quot;</span><span class="p">),</span>
+        <span class="c1"># match rule for all tables with table name pattern &#39;others_*&#39;</span>
+        <span class="n">MatchRuleObject</span><span class="p">(</span><span class="n">table_name_regex</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;^others_([a-zA-Z_0-9]+)&quot;</span><span class="p">)</span>
+    <span class="p">]</span>
+</code></pre></div></p>
+<p>After configuring this, users will not be able to edit table and column descriptions of any table matching above match rules
+from UI.</p>
+
+<!-- Source files -->
+
+  
+
+
+<!-- Support for mkdocs-git-revision-date-localized-plugin -->
+
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../configuration/" title="React Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                React Configuration
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../examples/superset_preview_client/" title="Preview Client Setup" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Preview Client Setup
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018-2020 Amundsen Project Authors.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://www.amundsen.io/" target="_blank" rel="noopener" title="globe" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/amundsen-io" target="_blank" rel="noopener" title="github-alt" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/amundsenio" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/the-linux-foundation/" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>

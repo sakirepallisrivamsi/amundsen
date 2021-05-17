@@ -1,0 +1,1524 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Amundsen is a metadata driven application for improving the productivity of data analysts, data scientists and engineers when interacting with data.">
+      
+      
+        <link rel="canonical" href="https://www.amundsen.io/amundsen/databuilder/docs/dashboard_ingestion_guide/">
+      
+      
+        <meta name="author" content="Amundsen Project Authors.">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../img/logos/amundsen_mark_orange.svg">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Dashboard Ingestion guide - Amundsen</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="#2b1b81" data-md-color-accent="#2b1b81">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#dashboard-ingestion-guidance" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.amundsen.io/amundsen/" title="Amundsen" aria-label="Amundsen" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../../img/logos/amundsen_mark_orange.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Amundsen
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Dashboard Ingestion guide
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/amundsen-io/amundsen/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Amundsen
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Overview
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../developer_guide/" class="md-tabs__link">
+          Developer Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../installation/" class="md-tabs__link">
+          User Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../frontend/" class="md-tabs__link">
+          Components
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.amundsen.io/amundsen/" title="Amundsen" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../../img/logos/amundsen_mark_orange.svg" width="48" height="48">
+      
+    </a>
+    Amundsen
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/amundsen-io/amundsen/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Amundsen
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Developer Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Developer Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer_guide/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../issue_labeling/" title="Issue and Feature Labeling" class="md-nav__link">
+      Issue and Feature Labeling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../CONTRIBUTING/" title="Contributing Guide" class="md-nav__link">
+      Contributing Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      User Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../installation/" title="Quick Start" class="md-nav__link">
+      Quick Start
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/index-postgres/" title="How to index metadata for real life databases" class="md-nav__link">
+      How to index metadata for real life databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/data-preview-with-superset/" title="How to setup a preview client with Apache Superset" class="md-nav__link">
+      How to setup a preview client with Apache Superset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/user-profiles/" title="How to setup user profiles" class="md-nav__link">
+      How to setup user profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="./" title="How to ingest Dashboard" class="md-nav__link">
+      How to ingest Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/how-to-track-user-metric/" title="How to track user metric for Amundsen" class="md-nav__link">
+      How to track user metric for Amundsen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/badges/" title="How to add table level and column level badges" class="md-nav__link">
+      How to add table level and column level badges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/how-to-search-effective/" title="How to search Amundsen effectively" class="md-nav__link">
+      How to search Amundsen effectively
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/how-to-use-amundsen-with-aws-neptune/" title="How to use Amundsen with Amazon Neptune" class="md-nav__link">
+      How to use Amundsen with Amazon Neptune
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Deployment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        Deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../authentication/oidc/" title="Authentication" class="md-nav__link">
+      Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../installation-aws-ecs/aws-ecs-deployment/" title="AWS ECS Installation" class="md-nav__link">
+      AWS ECS Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../k8s_install/" title="K8S Installation" class="md-nav__link">
+      K8S Installation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Components
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Components
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Frontend
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Frontend
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1-2" type="checkbox" id="nav-5-1-2">
+    
+    <label class="md-nav__link" for="nav-5-1-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-1-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/application_config/" title="Application Config" class="md-nav__link">
+      Application Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/configuration/" title="React Configuration" class="md-nav__link">
+      React Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/flask_config/" title="Flask Configuration" class="md-nav__link">
+      Flask Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/examples/superset_preview_client/" title="Preview Client Setup" class="md-nav__link">
+      Preview Client Setup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/developer_guide/" title="FE Developer Guide" class="md-nav__link">
+      FE Developer Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/installation/" title="FE Installation Guide" class="md-nav__link">
+      FE Installation Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/recommended_practices/" title="Recommended Practices" class="md-nav__link">
+      Recommended Practices
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Search
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        Search
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../search/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2-2" type="checkbox" id="nav-5-2-2">
+    
+    <label class="md-nav__link" for="nav-5-2-2">
+      Proxy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-2-2">
+        Proxy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../search/docs/atlas-search/" title="Atlas Backend" class="md-nav__link">
+      Atlas Backend
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Metadata
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        Metadata
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-2" type="checkbox" id="nav-5-3-2">
+    
+    <label class="md-nav__link" for="nav-5-3-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/configurations/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/structure/" title="Metadata API Structure" class="md-nav__link">
+      Metadata API Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-4" type="checkbox" id="nav-5-3-4">
+    
+    <label class="md-nav__link" for="nav-5-3-4">
+      Proxy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-4">
+        Proxy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-4-1" type="checkbox" id="nav-5-3-4-1">
+    
+    <label class="md-nav__link" for="nav-5-3-4-1">
+      Atlas Backend
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-5-3-4-1">
+        Atlas Backend
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/proxy/atlas_proxy/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/proxy/atlas/popular_tables/" title="Popular Table" class="md-nav__link">
+      Popular Table
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/proxy/gremlin/" title="Gremlin Backend" class="md-nav__link">
+      Gremlin Backend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/proxy/neptune/" title="Neptune Backend" class="md-nav__link">
+      Neptune Backend
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4" checked>
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Databuilder
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        Databuilder
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../models/" title="Models" class="md-nav__link">
+      Models
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Dashboard Ingestion guide
+      </label>
+    
+    <a href="./" title="Dashboard Ingestion guide" class="md-nav__link md-nav__link--active">
+      Dashboard Ingestion guide
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ingest-base-data-to-neo4j" class="md-nav__link">
+    1. Ingest base data to Neo4j.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ingest-additional-data-and-decorate-neo4j-over-base-data" class="md-nav__link">
+    2. Ingest additional data and decorate Neo4j over base data.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ingest-dashboard-usage-data-and-decorate-neo4j-over-base-data" class="md-nav__link">
+    2.1. Ingest Dashboard usage data and decorate Neo4j over base data.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-ingest-accumulated-usage-into-data-warehouse-eg-hive-bigquery-redshift-postgres-etc" class="md-nav__link">
+    2.1.1. Ingest accumulated usage into Data warehouse (e.g: Hive, BigQuery, Redshift, Postgres, etc)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-update-elasticsearch-index-using-neo4j-data" class="md-nav__link">
+    3. Update Elasticsearch index using Neo4j data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-remove-stale-data" class="md-nav__link">
+    4. Remove stale data
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Common
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Common
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../common/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../roadmap/" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-ingest-base-data-to-neo4j" class="md-nav__link">
+    1. Ingest base data to Neo4j.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ingest-additional-data-and-decorate-neo4j-over-base-data" class="md-nav__link">
+    2. Ingest additional data and decorate Neo4j over base data.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-ingest-dashboard-usage-data-and-decorate-neo4j-over-base-data" class="md-nav__link">
+    2.1. Ingest Dashboard usage data and decorate Neo4j over base data.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-ingest-accumulated-usage-into-data-warehouse-eg-hive-bigquery-redshift-postgres-etc" class="md-nav__link">
+    2.1.1. Ingest accumulated usage into Data warehouse (e.g: Hive, BigQuery, Redshift, Postgres, etc)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-update-elasticsearch-index-using-neo4j-data" class="md-nav__link">
+    3. Update Elasticsearch index using Neo4j data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-remove-stale-data" class="md-nav__link">
+    4. Remove stale data
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+
+  <a href="https://github.com/amundsen-io/amundsendatabuilder/edit/master/docs/dashboard_ingestion_guide.md" title="Edit this page" class="md-icon md-content__icon">
+    &#xE3C9;<!-- edit -->
+  </a>
+
+<!--
+  Hack: check whether the content contains a h1 headline. If it
+  doesn't, the page title (or respectively site name) is used
+  as the main headline.
+-->
+
+
+<!-- Content -->
+<h1 id="dashboard-ingestion-guidance">Dashboard Ingestion guidance<a class="headerlink" href="#dashboard-ingestion-guidance" title="Permanent link">&para;</a></h1>
+<p>(Currently this guidance is about using Databuilder to ingest Dashboard metadata into Neo4j and Elasticsearch)</p>
+<p>Dashboard ingestion consists of multiple Databuilder jobs and it can be described in four steps:</p>
+<ol>
+<li>Ingest base data to Neo4j.</li>
+<li>Ingest additional data and decorate Neo4j over base data.</li>
+<li>Update Elasticsearch index using Neo4j data</li>
+<li>Remove stale data</li>
+</ol>
+<p>Note that Databuilder jobs need to be sequenced as 1 -&gt; 2 -&gt; 3 -&gt; 4. To sequencing these jobs, Lyft uses Airflow to orchestrate the job, but Databuilder is not limited to Airflow and you can also simply use Python script to sequence it &ndash; not recommended for production though.</p>
+<p>Also, step 1, 3, 4 is expected to have one Databuilder job where Step 2 is expected to have <strong>multiple</strong> Databuilder jobs and number of Databuilder jobs in step 2 is expected to grow as we add more metadata into Dashboard. To improve performance, it is recommended, but not required, to execute Databuilder jobs in step 2 concurrently.</p>
+<p>Once finished step 1 and 2, you will have Graph like this:
+<img alt="Dashboard graph modeling" src="../assets/dashboard_graph_modeling.png?raw=true" title="Dashboard graph modeling" /></p>
+<p>Here this documentation will be using <a href="https://app.mode.com/">Mode Dashboard</a> as concrete example to show how to ingest Dashboard metadata. However, this ingestion process not limited to Mode Dashboard and any other Dashboard can follow this flow.</p>
+<h3 id="1-ingest-base-data-to-neo4j">1. Ingest base data to Neo4j.<a class="headerlink" href="#1-ingest-base-data-to-neo4j" title="Permanent link">&para;</a></h3>
+<p>Using <a href="../../#modedashboardextractor">ModeDashboardExtractor</a> along with <a href="../../#fsneo4jcsvloader">FsNeo4jCSVLoader</a> and <a href="../../#neo4jcsvpublisher">Neo4jCsvPublisher</a> to add base information such as Dashboard group name, Dashboard group id, Dashboard group description, Dashboard name, Dashboard id, Dashboard description to Neo4j. Use <a href="../../#modedashboardextractor">this job configuration</a> example to configure the job.</p>
+<h3 id="2-ingest-additional-data-and-decorate-neo4j-over-base-data">2. Ingest additional data and decorate Neo4j over base data.<a class="headerlink" href="#2-ingest-additional-data-and-decorate-neo4j-over-base-data" title="Permanent link">&para;</a></h3>
+<p>Use other Mode dashboard&rsquo;s extractors in create &amp; launch multiple Databuilder jobs. Note that it all Databuilder job here will use <a href="../../#fsneo4jcsvloader">FsNeo4jCSVLoader</a> and <a href="../../#neo4jcsvpublisher">Neo4jCsvPublisher</a> where their configuration should be almost the same except the <code>NODE_FILES_DIR</code> and <code>RELATION_FILES_DIR</code> that is being used for temporary location to hold data.</p>
+<p>List of other Extractors can be found <a href="../../#mode-dashboard-extractor">here</a></p>
+<h4 id="21-ingest-dashboard-usage-data-and-decorate-neo4j-over-base-data">2.1. Ingest Dashboard usage data and decorate Neo4j over base data.<a class="headerlink" href="#21-ingest-dashboard-usage-data-and-decorate-neo4j-over-base-data" title="Permanent link">&para;</a></h4>
+<p>Mode provide usage data (view count) per Dashboard, but this is accumulated usage data. The main use case of usage is search ranking and <code>accumulated usage</code> is not that much useful for Amundsen as we don&rsquo;t want to show certain Dashboard that was popular years ago and potentially deprecated.</p>
+<p>To bring recent usage information, we can <code>snapshot</code> accumulated usage per report daily and extract recent usage information (past 30 days, 60 days, 90 days that fits our view of recency). </p>
+<h5 id="211-ingest-accumulated-usage-into-data-warehouse-eg-hive-bigquery-redshift-postgres-etc">2.1.1. Ingest <code>accumulated usage</code> into Data warehouse (e.g: Hive, BigQuery, Redshift, Postgres, etc)<a class="headerlink" href="#211-ingest-accumulated-usage-into-data-warehouse-eg-hive-bigquery-redshift-postgres-etc" title="Permanent link">&para;</a></h5>
+<p>In this step, you can use ModeDashboardUsageExtractor to extract <code>accumulated_view_count</code> and load into Data warehouse of your choice by using GenericLoader.</p>
+<p>Note that GenericLoader just takes a callback function, and you need to provide a function that <code>INSERT</code> record into your Dataware house.</p>
+<p><div class="highlight"><pre><span></span><code><span class="n">extractor</span> <span class="o">=</span> <span class="n">ModeDashboardUsageExtractor</span><span class="p">()</span>
+<span class="n">loader</span> <span class="o">=</span> <span class="n">GenericLoader</span><span class="p">()</span>
+<span class="n">task</span> <span class="o">=</span> <span class="n">DefaultTask</span><span class="p">(</span><span class="n">extractor</span><span class="o">=</span><span class="n">extractor</span><span class="p">,</span>
+                   <span class="n">loader</span><span class="o">=</span><span class="n">loader</span><span class="p">)</span>
+
+<span class="n">job_config</span> <span class="o">=</span> <span class="n">ConfigFactory</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
+    <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extractor</span><span class="o">.</span><span class="n">get_scope</span><span class="p">(),</span> <span class="n">ORGANIZATION</span><span class="p">):</span> <span class="n">organization</span><span class="p">,</span>
+    <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extractor</span><span class="o">.</span><span class="n">get_scope</span><span class="p">(),</span> <span class="n">MODE_ACCESS_TOKEN</span><span class="p">):</span> <span class="n">mode_token</span><span class="p">,</span>
+    <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">extractor</span><span class="o">.</span><span class="n">get_scope</span><span class="p">(),</span> <span class="n">MODE_PASSWORD_TOKEN</span><span class="p">):</span> <span class="n">mode_password</span><span class="p">,</span>
+    <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">loader</span><span class="o">.</span><span class="n">get_scope</span><span class="p">(),</span> <span class="s1">&#39;callback_function&#39;</span><span class="p">):</span> <span class="n">mode_dashboard_usage_loader_callback_function</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="n">job</span> <span class="o">=</span> <span class="n">DefaultJob</span><span class="p">(</span><span class="n">conf</span><span class="o">=</span><span class="n">job_config</span><span class="p">,</span> <span class="n">task</span><span class="o">=</span><span class="n">task</span><span class="p">)</span>
+<span class="n">job</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+</code></pre></div>
+Step 2. Extract past ? days usage data from your Data warehouse and publish it to Neo4j.
+You could use <a href="../../#list-of-extractors">existing extractors</a> to achieve this with <a href="../models/#dashboardusage">DashboardUsage model</a> along with <a href="../../#fsneo4jcsvloader">FsNeo4jCSVLoader</a> and <a href="../../#neo4jcsvpublisher">Neo4jCsvPublisher</a>.</p>
+<h3 id="3-update-elasticsearch-index-using-neo4j-data">3. Update Elasticsearch index using Neo4j data<a class="headerlink" href="#3-update-elasticsearch-index-using-neo4j-data" title="Permanent link">&para;</a></h3>
+<p>Once data is ready in Neo4j, extract Neo4j data and push it to Elasticsearch using <a href="../../databuilder/extractor/neo4j_search_data_extractor.py">Neo4jSearchDataExtractor</a> and <a href="../../databuilder/publisher/elasticsearch_publisher.py">ElasticsearchPublisher</a></p>
+<div class="highlight"><pre><span></span><code><span class="n">tmp_es_file_path</span> <span class="o">=</span> <span class="s1">&#39;/var/tmp/amundsen_dashboard/elasticsearch_dashboard_upload/es_data.json&#39;</span>
+
+<span class="n">elasticsearch_new_index_name</span> <span class="o">=</span> <span class="s1">&#39;dashboard_search_index_</span><span class="si">{ds}</span><span class="s1">_</span><span class="si">{hex_str}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ds</span><span class="o">=</span><span class="s1">&#39;2020-05-12&#39;</span><span class="p">,</span>
+                                                                              <span class="n">hex_str</span><span class="o">=</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span><span class="p">)</span>
+
+<span class="n">elasticsearch_doc_type</span> <span class="o">=</span> <span class="s1">&#39;dashboard&#39;</span>
+<span class="n">elasticsearch_index_alias</span> <span class="o">=</span> <span class="s1">&#39;dashboard_search_index&#39;</span>
+<span class="n">job_config</span> <span class="o">=</span> <span class="n">ConfigFactory</span><span class="o">.</span><span class="n">from_dict</span><span class="p">({</span>
+    <span class="s1">&#39;extractor.search_data.extractor.neo4j.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Neo4jExtractor</span><span class="o">.</span><span class="n">GRAPH_URL_CONFIG_KEY</span><span class="p">):</span>
+        <span class="n">neo4j_endpoint</span><span class="p">,</span>
+    <span class="s1">&#39;extractor.search_data.extractor.neo4j.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Neo4jExtractor</span><span class="o">.</span><span class="n">MODEL_CLASS_CONFIG_KEY</span><span class="p">):</span>
+        <span class="s1">&#39;databuilder.models.dashboard_elasticsearch_document.DashboardESDocument&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;extractor.search_data.extractor.neo4j.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Neo4jExtractor</span><span class="o">.</span><span class="n">NEO4J_AUTH_USER</span><span class="p">):</span>
+        <span class="n">neo4j_user</span><span class="p">,</span>
+    <span class="s1">&#39;extractor.search_data.extractor.neo4j.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Neo4jExtractor</span><span class="o">.</span><span class="n">NEO4J_AUTH_PW</span><span class="p">):</span>
+        <span class="n">neo4j_password</span><span class="p">,</span>
+    <span class="s1">&#39;extractor.search_data.extractor.neo4j.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Neo4jExtractor</span><span class="o">.</span><span class="n">NEO4J_ENCRYPTED</span><span class="p">):</span>
+        <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;extractor.search_data.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Neo4jSearchDataExtractor</span><span class="o">.</span><span class="n">CYPHER_QUERY_CONFIG_KEY</span><span class="p">):</span>
+        <span class="n">Neo4jSearchDataExtractor</span><span class="o">.</span><span class="n">DEFAULT_NEO4J_DASHBOARD_CYPHER_QUERY</span><span class="p">,</span>
+    <span class="s1">&#39;extractor.search_data.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">neo4j_csv_publisher</span><span class="o">.</span><span class="n">JOB_PUBLISH_TAG</span><span class="p">):</span>
+        <span class="n">job_publish_tag</span><span class="p">,</span>
+    <span class="s1">&#39;loader.filesystem.elasticsearch.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">FSElasticsearchJSONLoader</span><span class="o">.</span><span class="n">FILE_PATH_CONFIG_KEY</span><span class="p">):</span>
+        <span class="n">tmp_es_file_path</span><span class="p">,</span>
+    <span class="s1">&#39;loader.filesystem.elasticsearch.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">FSElasticsearchJSONLoader</span><span class="o">.</span><span class="n">FILE_MODE_CONFIG_KEY</span><span class="p">):</span>
+        <span class="s1">&#39;w&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;publisher.elasticsearch.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ElasticsearchPublisher</span><span class="o">.</span><span class="n">FILE_PATH_CONFIG_KEY</span><span class="p">):</span>
+        <span class="n">tmp_es_file_path</span><span class="p">,</span>
+    <span class="s1">&#39;publisher.elasticsearch.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ElasticsearchPublisher</span><span class="o">.</span><span class="n">FILE_MODE_CONFIG_KEY</span><span class="p">):</span>
+        <span class="s1">&#39;r&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;publisher.elasticsearch.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ElasticsearchPublisher</span><span class="o">.</span><span class="n">ELASTICSEARCH_CLIENT_CONFIG_KEY</span><span class="p">):</span>
+        <span class="n">elasticsearch_client</span><span class="p">,</span>
+    <span class="s1">&#39;publisher.elasticsearch.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ElasticsearchPublisher</span><span class="o">.</span><span class="n">ELASTICSEARCH_NEW_INDEX_CONFIG_KEY</span><span class="p">):</span>
+        <span class="n">elasticsearch_new_index</span><span class="p">,</span>
+    <span class="s1">&#39;publisher.elasticsearch.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ElasticsearchPublisher</span><span class="o">.</span><span class="n">ELASTICSEARCH_DOC_TYPE_CONFIG_KEY</span><span class="p">):</span>
+        <span class="n">elasticsearch_doc_type</span><span class="p">,</span>
+    <span class="s1">&#39;publisher.elasticsearch.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ElasticsearchPublisher</span><span class="o">.</span><span class="n">ELASTICSEARCH_MAPPING_CONFIG_KEY</span><span class="p">):</span>
+        <span class="n">DASHBOARD_ELASTICSEARCH_INDEX_MAPPING</span><span class="p">,</span>
+    <span class="s1">&#39;publisher.elasticsearch.</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ElasticsearchPublisher</span><span class="o">.</span><span class="n">ELASTICSEARCH_ALIAS_CONFIG_KEY</span><span class="p">):</span>
+        <span class="n">elasticsearch_index_alias</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="n">job</span> <span class="o">=</span> <span class="n">DefaultJob</span><span class="p">(</span><span class="n">conf</span><span class="o">=</span><span class="n">job_config</span><span class="p">,</span>
+                 <span class="n">task</span><span class="o">=</span><span class="n">DefaultTask</span><span class="p">(</span><span class="n">extractor</span><span class="o">=</span><span class="n">Neo4jSearchDataExtractor</span><span class="p">(),</span>
+                                  <span class="n">loader</span><span class="o">=</span><span class="n">FSElasticsearchJSONLoader</span><span class="p">()),</span>
+                 <span class="n">publisher</span><span class="o">=</span><span class="n">ElasticsearchPublisher</span><span class="p">())</span>
+<span class="n">job</span><span class="o">.</span><span class="n">launch</span><span class="p">()</span>
+</code></pre></div>
+<p>*Note that <code>DASHBOARD_ELASTICSEARCH_INDEX_MAPPING</code> is defined <a href="../../databuilder/publisher/elasticsearch_constants.py">here</a>.  </p>
+<h3 id="4-remove-stale-data">4. Remove stale data<a class="headerlink" href="#4-remove-stale-data" title="Permanent link">&para;</a></h3>
+<p>Dashboard ingestion, like Table ingestion, is UPSERT (CREATE OR UPDATE) operation and there could be some data deleted on source. Not removing it in Neo4j basically leaving a stale data in Amundsen.</p>
+<p>You can use <a href="../../#removing-stale-data-in-neo4j----neo4jstalenessremovaltask">Neo4jStalenessRemovalTask</a> to remove stale data.</p>
+<p>There are two strategies to remove stale data. One is to use <code>job_publish_tag</code> and the other one is to use <code>milliseconds_to_expire</code>.</p>
+<p>For example, you could use <code>job_publish_tag</code> to remove stale <code>DashboardGroup</code>, <code>Dashboard</code>, and  <code>Query</code> nodes.  And you could use <code>milliseconds_to_expire</code> on <code>Timestamp</code> node,  <code>READ</code> relation, and <code>READ_BY</code>.  One of the main reasons to use <code>milliseconds_to_expire</code> is to avoid race condition and it is explained more <a href="./README.md#using-publisher_last_updated_epoch_ms-to-remove-stale-data">here</a></p>
+
+<!-- Source files -->
+
+  
+
+
+<!-- Support for mkdocs-git-revision-date-localized-plugin -->
+
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../models/" title="Models" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Models
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../../common/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Overview
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018-2020 Amundsen Project Authors.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://www.amundsen.io/" target="_blank" rel="noopener" title="globe" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/amundsen-io" target="_blank" rel="noopener" title="github-alt" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/amundsenio" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/the-linux-foundation/" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>

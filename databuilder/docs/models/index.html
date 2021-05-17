@@ -1,0 +1,2309 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Amundsen is a metadata driven application for improving the productivity of data analysts, data scientists and engineers when interacting with data.">
+      
+      
+        <link rel="canonical" href="https://www.amundsen.io/amundsen/databuilder/docs/models/">
+      
+      
+        <meta name="author" content="Amundsen Project Authors.">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../img/logos/amundsen_mark_orange.svg">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>Models - Amundsen</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="#2b1b81" data-md-color-accent="#2b1b81">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#amundsen-models" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.amundsen.io/amundsen/" title="Amundsen" aria-label="Amundsen" class="md-header-nav__button md-logo">
+          
+            <img alt="logo" src="../../../img/logos/amundsen_mark_orange.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Amundsen
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Models
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/amundsen-io/amundsen/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Amundsen
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." class="md-tabs__link">
+        Overview
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../developer_guide/" class="md-tabs__link">
+          Developer Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../installation/" class="md-tabs__link">
+          User Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../frontend/" class="md-tabs__link">
+          Components
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+      
+        
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.amundsen.io/amundsen/" title="Amundsen" class="md-nav__button md-logo">
+      
+        <img alt="logo" src="../../../img/logos/amundsen_mark_orange.svg" width="48" height="48">
+      
+    </a>
+    Amundsen
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/amundsen-io/amundsen/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Amundsen
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../architecture/" title="Architecture" class="md-nav__link">
+      Architecture
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Developer Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Developer Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../developer_guide/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../issue_labeling/" title="Issue and Feature Labeling" class="md-nav__link">
+      Issue and Feature Labeling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../CONTRIBUTING/" title="Contributing Guide" class="md-nav__link">
+      Contributing Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      User Guide
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../installation/" title="Quick Start" class="md-nav__link">
+      Quick Start
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+    <label class="md-nav__link" for="nav-4-2">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-2">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/index-postgres/" title="How to index metadata for real life databases" class="md-nav__link">
+      How to index metadata for real life databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/data-preview-with-superset/" title="How to setup a preview client with Apache Superset" class="md-nav__link">
+      How to setup a preview client with Apache Superset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/user-profiles/" title="How to setup user profiles" class="md-nav__link">
+      How to setup user profiles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dashboard_ingestion_guide/" title="How to ingest Dashboard" class="md-nav__link">
+      How to ingest Dashboard
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/how-to-track-user-metric/" title="How to track user metric for Amundsen" class="md-nav__link">
+      How to track user metric for Amundsen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/badges/" title="How to add table level and column level badges" class="md-nav__link">
+      How to add table level and column level badges
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/how-to-search-effective/" title="How to search Amundsen effectively" class="md-nav__link">
+      How to search Amundsen effectively
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tutorials/how-to-use-amundsen-with-aws-neptune/" title="How to use Amundsen with Amazon Neptune" class="md-nav__link">
+      How to use Amundsen with Amazon Neptune
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3">
+    
+    <label class="md-nav__link" for="nav-4-3">
+      Deployment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-3">
+        Deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../authentication/oidc/" title="Authentication" class="md-nav__link">
+      Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../installation-aws-ecs/aws-ecs-deployment/" title="AWS ECS Installation" class="md-nav__link">
+      AWS ECS Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../k8s_install/" title="K8S Installation" class="md-nav__link">
+      K8S Installation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Components
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Components
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Frontend
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Frontend
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1-2" type="checkbox" id="nav-5-1-2">
+    
+    <label class="md-nav__link" for="nav-5-1-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-1-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/application_config/" title="Application Config" class="md-nav__link">
+      Application Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/configuration/" title="React Configuration" class="md-nav__link">
+      React Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/flask_config/" title="Flask Configuration" class="md-nav__link">
+      Flask Configuration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/examples/superset_preview_client/" title="Preview Client Setup" class="md-nav__link">
+      Preview Client Setup
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/developer_guide/" title="FE Developer Guide" class="md-nav__link">
+      FE Developer Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/installation/" title="FE Installation Guide" class="md-nav__link">
+      FE Installation Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../frontend/docs/recommended_practices/" title="Recommended Practices" class="md-nav__link">
+      Recommended Practices
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2" type="checkbox" id="nav-5-2">
+    
+    <label class="md-nav__link" for="nav-5-2">
+      Search
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-2">
+        Search
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../search/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-2-2" type="checkbox" id="nav-5-2-2">
+    
+    <label class="md-nav__link" for="nav-5-2-2">
+      Proxy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-2-2">
+        Proxy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../search/docs/atlas-search/" title="Atlas Backend" class="md-nav__link">
+      Atlas Backend
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3" type="checkbox" id="nav-5-3">
+    
+    <label class="md-nav__link" for="nav-5-3">
+      Metadata
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-3">
+        Metadata
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-2" type="checkbox" id="nav-5-3-2">
+    
+    <label class="md-nav__link" for="nav-5-3-2">
+      Configuration
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-2">
+        Configuration
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/configurations/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/structure/" title="Metadata API Structure" class="md-nav__link">
+      Metadata API Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-4" type="checkbox" id="nav-5-3-4">
+    
+    <label class="md-nav__link" for="nav-5-3-4">
+      Proxy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-3-4">
+        Proxy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-3-4-1" type="checkbox" id="nav-5-3-4-1">
+    
+    <label class="md-nav__link" for="nav-5-3-4-1">
+      Atlas Backend
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-5-3-4-1">
+        Atlas Backend
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/proxy/atlas_proxy/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/proxy/atlas/popular_tables/" title="Popular Table" class="md-nav__link">
+      Popular Table
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/proxy/gremlin/" title="Gremlin Backend" class="md-nav__link">
+      Gremlin Backend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../metadata/docs/proxy/neptune/" title="Neptune Backend" class="md-nav__link">
+      Neptune Backend
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4" checked>
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Databuilder
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        Databuilder
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Models
+      </label>
+    
+    <a href="./" title="Models" class="md-nav__link md-nav__link--active">
+      Models
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-models" class="md-nav__link">
+    The Models
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tablemetadata" class="md-nav__link">
+    TableMetadata
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watermark" class="md-nav__link">
+    Watermark
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_1" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#columnusagemodel" class="md-nav__link">
+    ColumnUsageModel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_2" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    User
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_3" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablecolumnstats" class="md-nav__link">
+    TableColumnStats
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_4" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    Application
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_5" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-owner" class="md-nav__link">
+    Table Owner
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_6" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-source" class="md-nav__link">
+    Table Source
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_7" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablelastupdated" class="md-nav__link">
+    TableLastUpdated
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_8" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_8" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-models" class="md-nav__link">
+    Dashboard models
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dashboardmetadata" class="md-nav__link">
+    DashboardMetadata
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_9" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_9" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardowner" class="md-nav__link">
+    DashboardOwner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_10" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_10" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardtable" class="md-nav__link">
+    DashboardTable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardusage" class="md-nav__link">
+    DashboardUsage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_11" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_11" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardlastmodifiedtimestamp" class="md-nav__link">
+    DashboardLastModifiedTimestamp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_12" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_12" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardexecution" class="md-nav__link">
+    DashboardExecution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_13" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardquery" class="md-nav__link">
+    DashboardQuery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_13" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardchart" class="md-nav__link">
+    DashboardChart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_14" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_14" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dashboard_ingestion_guide/" title="Dashboard Ingestion guide" class="md-nav__link">
+      Dashboard Ingestion guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Common
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Common
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../common/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../roadmap/" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-models" class="md-nav__link">
+    The Models
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tablemetadata" class="md-nav__link">
+    TableMetadata
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watermark" class="md-nav__link">
+    Watermark
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_1" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_1" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#columnusagemodel" class="md-nav__link">
+    ColumnUsageModel
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_2" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_2" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    User
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_3" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_3" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablecolumnstats" class="md-nav__link">
+    TableColumnStats
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_4" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_4" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application" class="md-nav__link">
+    Application
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_5" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_5" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-owner" class="md-nav__link">
+    Table Owner
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_6" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_6" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-source" class="md-nav__link">
+    Table Source
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_7" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_7" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tablelastupdated" class="md-nav__link">
+    TableLastUpdated
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_8" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_8" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-models" class="md-nav__link">
+    Dashboard models
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dashboardmetadata" class="md-nav__link">
+    DashboardMetadata
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description_9" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_9" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardowner" class="md-nav__link">
+    DashboardOwner
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_10" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_10" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardtable" class="md-nav__link">
+    DashboardTable
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardusage" class="md-nav__link">
+    DashboardUsage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_11" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_11" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardlastmodifiedtimestamp" class="md-nav__link">
+    DashboardLastModifiedTimestamp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_12" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_12" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardexecution" class="md-nav__link">
+    DashboardExecution
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_13" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardquery" class="md-nav__link">
+    DashboardQuery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_13" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboardchart" class="md-nav__link">
+    DashboardChart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description_14" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extraction_14" class="md-nav__link">
+    Extraction
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+
+  <a href="https://github.com/amundsen-io/amundsendatabuilder/edit/master/docs/models.md" title="Edit this page" class="md-icon md-content__icon">
+    &#xE3C9;<!-- edit -->
+  </a>
+
+<!--
+  Hack: check whether the content contains a h1 headline. If it
+  doesn't, the page title (or respectively site name) is used
+  as the main headline.
+-->
+
+
+<!-- Content -->
+<h1 id="amundsen-models">Amundsen Models<a class="headerlink" href="#amundsen-models" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>These are the python classes that live in <a href="../databuilder/models/">databuilder/models/</a>.</p>
+<p>Models represent the data structures that live in either neo4j (if the model extends Neo4jSerializable) or in elasticsearch.</p>
+<p>Models that extend Neo4jSerializable have methods to create:
+- the nodes
+- the relationships</p>
+<p>In this way, amundsendatabuilder pipelines can create python objects that can then be loaded into neo4j / elastic search
+without developers needing to know the internals of the neo4j schema. </p>
+<hr />
+<h2 id="the-models">The Models<a class="headerlink" href="#the-models" title="Permanent link">&para;</a></h2>
+<h3 id="tablemetadata"><a href="../../databuilder/models/table_metadata.py">TableMetadata</a><a class="headerlink" href="#tablemetadata" title="Permanent link">&para;</a></h3>
+<p><em>What datasets does my org have?</em></p>
+<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
+<p>This corresponds to a dataset in amundsen and is the core building block.
+In addition to ColumnMetadata, tableMetadata is one of the first datasets you should extract as
+almost everything else depends on these being populated. </p>
+<h4 id="extraction">Extraction<a class="headerlink" href="#extraction" title="Permanent link">&para;</a></h4>
+<p>In general, for Table and Column Metadata, you should be able to use one of the pre-made extractors
+in the <a href="../databuilder/extractor">extractor package</a></p>
+<h3 id="watermark"><a href="../../databuilder/models/watermark.py">Watermark</a><a class="headerlink" href="#watermark" title="Permanent link">&para;</a></h3>
+<p><em>What is the earliest data that this table has? What is the latest data?</em>
+This is NOT the same as when the data was last updated.</p>
+<h4 id="description_1">Description<a class="headerlink" href="#description_1" title="Permanent link">&para;</a></h4>
+<p>Corresponds to the earliest and latest date that a dataset has. Only makes
+sense if the dataset is timeseries data.
+For example, a given table may have data from 2019/01/01 -&gt; 2020/01/01
+In that case the low watermark is 2019/01/01 and the high watermark is 2020/01/01.</p>
+<h4 id="extraction_1">Extraction<a class="headerlink" href="#extraction_1" title="Permanent link">&para;</a></h4>
+<p>Depending on the datastore of your dataset, you would extract this by:
+- a query on the minimum and maximum partition (hive)
+- a query for the minimum and maximum record of a given timestamp column</p>
+<h3 id="columnusagemodel"><a href="../../databuilder/models/column_usage_model.py">ColumnUsageModel</a><a class="headerlink" href="#columnusagemodel" title="Permanent link">&para;</a></h3>
+<p><em>How many queries is a given column getting? By which users?</em></p>
+<p>Has query counts per a given column per a user. This can help identify </p>
+<h4 id="description_2">Description<a class="headerlink" href="#description_2" title="Permanent link">&para;</a></h4>
+<p>who uses given datasets so people can contact them if they have questions
+on how to use a given dataset or if a dataset is changing. It is also used as a 
+search boost so that the most used tables are put to the top of the search results.</p>
+<p>For more traditional databases, there should be system tables where you can obtain </p>
+<h4 id="extraction_2">Extraction<a class="headerlink" href="#extraction_2" title="Permanent link">&para;</a></h4>
+<p>these sorts of usage statistics.</p>
+<p>In other cases, you may need to use audit logs which could require a custom solution.</p>
+<p>Finally, for none traditional data lakes, getting this information exactly maybe difficult and you may need to rely
+on a heuristic.</p>
+<h3 id="user"><a href="../../databuilder/models/user.py">User</a><a class="headerlink" href="#user" title="Permanent link">&para;</a></h3>
+<p><em>What users are there out there? Which team is this user on?</em></p>
+<h4 id="description_3">Description<a class="headerlink" href="#description_3" title="Permanent link">&para;</a></h4>
+<p>Represents all of the metadata for a user at your company.
+This is required if you are going to be having authentication turned on.</p>
+<h4 id="extraction_3">Extraction<a class="headerlink" href="#extraction_3" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+<h3 id="tablecolumnstats"><a href="../../databuilder/models/table_stats.py">TableColumnStats</a><a class="headerlink" href="#tablecolumnstats" title="Permanent link">&para;</a></h3>
+<ul>
+<li>What are the min/max values for this column? How many nulls are in this column? *</li>
+</ul>
+<h4 id="description_4">Description<a class="headerlink" href="#description_4" title="Permanent link">&para;</a></h4>
+<p>This represents statistics on the column level (this is not for table level metrics).
+The idea is that different companies will want to track different things about different columns, so this is highly
+customizable.
+It also will probably require a distributed cluster in order to calculate these regularly and in general is
+probably the least accessible metrics to get at without a custom solution.</p>
+<h4 id="extraction_4">Extraction<a class="headerlink" href="#extraction_4" title="Permanent link">&para;</a></h4>
+<p>The idea here would be to implement something that does the following:
+For each table you care about:
+For each column you care about:
+Calculate statistics that you care about such as min/max/average etc.</p>
+<h3 id="application"><a href="../../databuilder/models/application.py">Application</a><a class="headerlink" href="#application" title="Permanent link">&para;</a></h3>
+<ul>
+<li>What job/application is writing to this table? *</li>
+</ul>
+<h4 id="description_5">Description<a class="headerlink" href="#description_5" title="Permanent link">&para;</a></h4>
+<p>This is used to provide users a way to find out what job/application is responsible for writing to this dataset.
+Currently the model assumes the application has to be in airflow, but in theory it could be generalized to other orchestration frameworks.</p>
+<h4 id="extraction_5">Extraction<a class="headerlink" href="#extraction_5" title="Permanent link">&para;</a></h4>
+<p>TODO</p>
+<h3 id="table-owner"><a href="../../databuilder/models/table_owner.py">Table Owner</a><a class="headerlink" href="#table-owner" title="Permanent link">&para;</a></h3>
+<ul>
+<li>What team or user owns this dataset? *</li>
+</ul>
+<h4 id="description_6">Description<a class="headerlink" href="#description_6" title="Permanent link">&para;</a></h4>
+<p>A dataset can have one or more owners. These owners are used when requesting table descriptions or could be just a useful
+point of contact for a user inquiring about how to use a dataset.</p>
+<h4 id="extraction_6">Extraction<a class="headerlink" href="#extraction_6" title="Permanent link">&para;</a></h4>
+<p>Although the main point of entry for owners is through the WebUI, you could in theory
+extract this information based on who created a given table. </p>
+<h3 id="table-source"><a href="../../databuilder/models/table_source.py">Table Source</a><a class="headerlink" href="#table-source" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Where is the source code for the application that writes to this dataset? *</li>
+</ul>
+<h4 id="description_7">Description<a class="headerlink" href="#description_7" title="Permanent link">&para;</a></h4>
+<p>Generally there is going to be code that your company owns that describes how a dataset is created.
+This model is what represents the link and type of repository to this source code so it is available to users.</p>
+<h4 id="extraction_7">Extraction<a class="headerlink" href="#extraction_7" title="Permanent link">&para;</a></h4>
+<p>You will need a github/gitlab/your repository crawler in order to populate this automatically.
+The idea there would be to search for a given table name or something else that is a unique identifier such that you can be confident
+that the source correctly matches to this table.</p>
+<h3 id="tablelastupdated"><a href="../../databuilder/models/table_last_updated.py">TableLastUpdated</a><a class="headerlink" href="#tablelastupdated" title="Permanent link">&para;</a></h3>
+<ul>
+<li>When was the last time this data was updated? Is this table stale or deprecated? *</li>
+</ul>
+<h4 id="description_8">Description<a class="headerlink" href="#description_8" title="Permanent link">&para;</a></h4>
+<p>This value is used to describe the last time the table had datapoints inserted into it.
+It is a very useful value as it can help users identify if there are tables that are no longer being updated.</p>
+<h4 id="extraction_8">Extraction<a class="headerlink" href="#extraction_8" title="Permanent link">&para;</a></h4>
+<p>There are some extractors available for this like <a href="../../databuilder/extractor/hive_table_last_updated_extractor.py">hive_table_last_updated_extractor</a>
+that you can refer to. But you will need access to history that provides information on when the last data write happened on a given table.
+If this data isn&rsquo;t available for your data source, you maybe able to approximate it by looking at the max of some timestamp column.  </p>
+<h2 id="dashboard-models">Dashboard models<a class="headerlink" href="#dashboard-models" title="Permanent link">&para;</a></h2>
+<p>Dashboard models are normalized which means that the model is separated so that it can be easily decoupled with how data is extracted. (If model is denormalized, all metadata is in model, then one extraction needs to able to pull all the data which makes extraction hard and complex) There&rsquo;s trade off in this decision of normalized design where it can be inefficient in the case that some ingestion can be done in one job for metadata source happen to provide all data it need. However, to make model flexible for most of metadata, it is normalized.  </p>
+<h3 id="dashboardmetadata"><a href="../../databuilder/models/dashboard/dashboard_metadata.py">DashboardMetadata</a><a class="headerlink" href="#dashboardmetadata" title="Permanent link">&para;</a></h3>
+<h4 id="description_9">Description<a class="headerlink" href="#description_9" title="Permanent link">&para;</a></h4>
+<p>A baseline of Dashboard metadata that consists of  dashboard group name, dashboard group description, dashboard description, etc. This model needs to be ingested first as other model builds relation to this.</p>
+<h4 id="extraction_9">Extraction<a class="headerlink" href="#extraction_9" title="Permanent link">&para;</a></h4>
+<p><a href="../../databuilder/extractor/dashboard/mode_analytics/mode_dashboard_extractor.py">ModeDashboardExtractor</a>  </p>
+<h4 id="dashboardowner"><a href="../../databuilder/models/dashboard/dashboard_owner.py">DashboardOwner</a><a class="headerlink" href="#dashboardowner" title="Permanent link">&para;</a></h4>
+<h4 id="description_10">Description<a class="headerlink" href="#description_10" title="Permanent link">&para;</a></h4>
+<p>A model that encapsulate Dashboard&rsquo;s owner. Note that it does not create new user as it has insufficient information about user but it builds relation between User and Dashboard</p>
+<h4 id="extraction_10">Extraction<a class="headerlink" href="#extraction_10" title="Permanent link">&para;</a></h4>
+<p><a href="../../databuilder/extractor/dashboard/mode_analytics/mode_dashboard_owner_extractor.py">ModeDashboardOwnerExtractor</a>  </p>
+<h4 id="dashboardtable"><a href="../../databuilder/models/dashboard/dashboard_table.py">DashboardTable</a><a class="headerlink" href="#dashboardtable" title="Permanent link">&para;</a></h4>
+<p>A model that link Dashboard with the tables used in various charts of the dashboard. Note that it does not create new dashboard, table as it has insufficient information but it builds relation between Tables and Dashboard.</p>
+<p>Supporting extractor: Currently there&rsquo;s no open sourced extractor for this. In Lyft, there&rsquo;s audit table that records SQL query, where it came from with identifier, along with tables that is used in SQL query. We basically query this table via <a href="../../databuilder/extractor/db_api_extractor.py">DBAPIExtractor</a></p>
+<h4 id="dashboardusage"><a href="../../databuilder/models/dashboard/dashboard_usage.py">DashboardUsage</a><a class="headerlink" href="#dashboardusage" title="Permanent link">&para;</a></h4>
+<h4 id="description_11">Description<a class="headerlink" href="#description_11" title="Permanent link">&para;</a></h4>
+<p>A model that encapsulate Dashboard usage between Dashboard and User</p>
+<h4 id="extraction_11">Extraction<a class="headerlink" href="#extraction_11" title="Permanent link">&para;</a></h4>
+<p>You can use <a href="../../databuilder/extractor/dashboard/mode_analytics/mode_dashboard_usage_extractor.py">ModeDashboardUsageExtractor</a> . However, currently Mode only provides accumulated view count where we need recent view counts (past 30, 60, or 90 days). To get recent view count, in Lyft, we use <a href="../../databuilder/extractor/dashboard/mode_analytics/mode_dashboard_usage_extractor.py">ModeDashboardUsageExtractor</a> to extract accumulated view count and <a href="https://github.com/amundsen-io/amundsendatabuilder/blob/master/databuilder/loader/generic_loader.py">GenericLoader</a> to load its record (no publisher here and publisher is not mandatory in DefaultJob) as a event where event materialized as daily snapshot. Once it captures daily accumulated view count, ingest recent view count by querying the datastore. In Lyft, we query via <a href="../../databuilder/extractor/db_api_extractor.py">DBAPIExtractor</a> through Presto.  </p>
+<h4 id="dashboardlastmodifiedtimestamp"><a href="../../databuilder/models/dashboard/dashboard_last_modified.py">DashboardLastModifiedTimestamp</a><a class="headerlink" href="#dashboardlastmodifiedtimestamp" title="Permanent link">&para;</a></h4>
+<h4 id="description_12">Description<a class="headerlink" href="#description_12" title="Permanent link">&para;</a></h4>
+<p>A model that encapsulate Dashboard&rsquo;s last modified timestamp in epoch</p>
+<h4 id="extraction_12">Extraction<a class="headerlink" href="#extraction_12" title="Permanent link">&para;</a></h4>
+<p><a href="../../databuilder/extractor/dashboard/mode_analytics/mode_dashboard_last_modified_timestamp_extractor.py">ModeDashboardLastModifiedTimestampExtractor</a>   </p>
+<h4 id="dashboardexecution"><a href="../../databuilder/models/dashboard/dashboard_execution.py">DashboardExecution</a><a class="headerlink" href="#dashboardexecution" title="Permanent link">&para;</a></h4>
+<p>A model that encapsulate Dashboard&rsquo;s execution timestamp in epoch and execution state. Note that this model supports last_execution and last_successful_execution by using <a href="../../databuilder/models/dashboard/dashboard_execution.py#L23">different identifier</a> in the URI.</p>
+<h4 id="extraction_13">Extraction<a class="headerlink" href="#extraction_13" title="Permanent link">&para;</a></h4>
+<p><a href="../../databuilder/extractor/dashboard/mode_analytics/mode_dashboard_executions_extractor.py">ModeDashboardExecutionsExtractor</a> which extracts last_execution.</p>
+<p><a href="../../databuilder/extractor/dashboard/mode_analytics/mode_dashboard_last_successful_executions_extractor.py">ModeDashboardLastSuccessfulExecutionExtractor</a>  </p>
+<h4 id="dashboardquery"><a href="../../databuilder/models/dashboard/dashboard_query.py">DashboardQuery</a><a class="headerlink" href="#dashboardquery" title="Permanent link">&para;</a></h4>
+<h4 id="description_13">Description<a class="headerlink" href="#description_13" title="Permanent link">&para;</a></h4>
+<p>A model that encapsulate Dashboard&rsquo;s query information.</p>
+<p>Supporting extractor: <a href="../../databuilder/extractor/dashboard/mode_analytics/mode_dashboard_queries_extractor.py">ModeDashboardQueriesExtractor</a></p>
+<h4 id="dashboardchart"><a href="../../databuilder/models/dashboard/dashboard_chart.py">DashboardChart</a><a class="headerlink" href="#dashboardchart" title="Permanent link">&para;</a></h4>
+<h4 id="description_14">Description<a class="headerlink" href="#description_14" title="Permanent link">&para;</a></h4>
+<p>A model that encapsulate Dashboard&rsquo;s charts where chart is associated with query.</p>
+<h4 id="extraction_14">Extraction<a class="headerlink" href="#extraction_14" title="Permanent link">&para;</a></h4>
+<p><a href="../databuilder/extractor/dashboard/mode_analytics/mode_dashboard_charts_extractor.py">ModeDashboardChartsExtractor</a>   </p>
+
+<!-- Source files -->
+
+  
+
+
+<!-- Support for mkdocs-git-revision-date-localized-plugin -->
+
+
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Overview
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../dashboard_ingestion_guide/" title="Dashboard Ingestion guide" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Dashboard Ingestion guide
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018-2020 Amundsen Project Authors.
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://www.amundsen.io/" target="_blank" rel="noopener" title="globe" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/amundsen-io" target="_blank" rel="noopener" title="github-alt" class="md-footer-social__link fa fa-github-alt"></a>
+    
+      <a href="https://twitter.com/amundsenio" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/company/the-linux-foundation/" target="_blank" rel="noopener" title="linkedin" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
