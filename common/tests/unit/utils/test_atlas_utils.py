@@ -1,6 +1,6 @@
 import unittest
 
-from metadata_service.proxy.atlas_utils import AtlasColumnKey, AtlasTableKey
+from amundsen_common.utils.atlas_utils import AtlasColumnKey, AtlasTableKey
 
 
 class TestAtlasTableKey(unittest.TestCase):

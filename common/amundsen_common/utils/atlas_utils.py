@@ -3,12 +3,12 @@ import re
 from typing import Any, Dict, Optional
 
 
-class Status:
+class AtlasStatus:
     ACTIVE = "ACTIVE"
     DELETED = "DELETED"
 
 
-class CommonParams:
+class AtlasCommonParams:
     qn = 'qualifiedName'
     guid = 'guid'
     attrs = 'attributes'
@@ -16,17 +16,17 @@ class CommonParams:
     uri = 'entityUri'
 
 
-class CommonTypes:
+class AtlasCommonTypes:
     bookmark = 'Bookmark'
     user = 'User'
     reader = 'Reader'
 
 
-class TableTypes:
+class AtlasTableTypes:
     table = 'Table'
 
 
-class DashboardTypes:
+class AtlasDashboardTypes:
     metadata = 'Dashboard'
     group = 'DashboardGroup'
     query = 'DashboardQuery'
